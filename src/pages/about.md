@@ -7,7 +7,7 @@ title: "about me"
 
 いらっしゃいませ to my little online home!
 
-I'm Kaleb Ascevich, another random person on the internet doing internet things.
+I'm Kaleb Ascevich, another random person on the internet doing internet things. I love Swift programming, especially for Mac apps. I'm also dabbling in Rust, NixOS, GarageBand, and Japanese (because those things clearly belong in the same sentence).
 
 Here's some basic information about me:
 
@@ -43,5 +43,3 @@ extension Me {
   }
 }
 ```
-
-I'm also low-key into music production. Why? I don't know. I'm weird.

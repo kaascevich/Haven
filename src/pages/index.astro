@@ -42,11 +42,13 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online. I love programming whatever I feel like in Swift, especially if it&rsquo;s creating Mac apps. I&rsquo;m also attempting to learn Rust, NixOS, and GarageBand (because those things clearly belong in the same sentence).
+        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online. Take a gander at
+        <LinkButton href="about" className="underline decoration-dashed underline-offset-8">
+          my about page
+        </LinkButton>
+        for more info.
       </p>
-      <p>
-        
-      </p>
+      <p></p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
