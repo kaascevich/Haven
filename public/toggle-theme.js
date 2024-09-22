@@ -39,7 +39,7 @@ function reflectPreference() {
     // Get the background color property
     const bgColor = computedStyles.backgroundColor;
 
-    // Set the background color in <meta theme-color ... />
+    // Set the background color in <meta theme-color .../>
     document
       .querySelector("meta[name='theme-color']")
       ?.setAttribute("content", bgColor);

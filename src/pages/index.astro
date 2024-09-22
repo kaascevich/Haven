@@ -20,16 +20,16 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
-  <Header />
+  <Header/>
   <main id="main-content">
     <section id="hero">
-      <h1>Mingalaba</h1>
+      <h1>いらっしゃいませ！</h1>
       <a
         target="_blank"
         href="/rss.xml"
         class="rss-link"
         aria-label="rss feed"
-        title="RSS Feed"
+        title="RSS feed"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
           ><path
@@ -38,42 +38,33 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
           ></path><circle cx="6" cy="18" r="2"></circle>
         </svg>
-        <span class="sr-only">RSS Feed</span>
+        <span class="sr-only">RSS feed</span>
       </a>
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online. I love programming whatever I feel like in Swift, especially if it&rsquo;s creating Mac apps. I&rsquo;m also attempting to learn Rust, NixOS, and GarageBand (because those things clearly belong in the same sentence).
       </p>
       <p>
-        Read the blog posts or check
-        <LinkButton
-          className="underline decoration-dashed underline-offset-4 hover:text-skin-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
+        
       </p>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
+            <div class="social-links">&ldquo;Social&rdquo; links:</div>
+            <Socials/>
           </div>
         )
       }
     </section>
 
-    <Hr />
+    <Hr/>
 
     {
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
-            <h2>Featured</h2>
+            <h2>featured</h2>
             <ul>
               {featuredPosts.map(({ data, slug }) => (
                 <Card
@@ -84,7 +75,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               ))}
             </ul>
           </section>
-          {recentPosts.length > 0 && <Hr />}
+          {recentPosts.length > 0 && <Hr/>}
         </>
       )
     }
@@ -92,7 +83,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     {
       recentPosts.length > 0 && (
         <section id="recent-posts">
-          <h2>Recent Posts</h2>
+          <h2>recent posts</h2>
           <ul>
             {recentPosts.map(
               ({ data, slug }, index) =>
@@ -111,7 +102,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
-        All Posts
+        all posts
         <svg xmlns="http://www.w3.org/2000/svg"
           ><path
             d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
@@ -121,7 +112,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     </div>
   </main>
 
-  <Footer />
+  <Footer/>
 </Layout>
 
 <style>

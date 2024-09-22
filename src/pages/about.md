@@ -1,36 +1,47 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "about me"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+![Me! But not quite.](/src/assets/images/me.png "Me! But not quite.")
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+いらっしゃいませ to my little online home!
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
+I'm Kaleb Ascevich, another random person on the internet doing internet things.
 
-<div>
-  <img src="/assets/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
+Here's some basic information about me:
 
-## Tech Stack
+```swift
+import Foundation
 
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
+struct Me: Person {
+  let name = Name("Kaleb A. Ascevich", pronunciation: "KAY-lub AICE-uh-vitch")
+  let pronouns = ("he", "him", "his")
+  let birthday: Date = DateComponents(
+    calendar: .current,
+    year: 2007, month: 11, day: 9
+  ).date!
 
-## Features
+  var devices: [_: (any Device, OS)] = [
+    "Kaleb's MacBook": (Mac(.macbookAir, 10, 1), .macOS),
+    "macbookair61": (Mac(.macbookAir, 6, 1), .linux("NixOS"))
+  ]
+  var langs: [Lang] = [.swift, .rust]
+  let shell = Shell.nushell
 
-Here are certain features of this site.
+  var apps: [_: [App]] = [
+    "ide": ["Xcode", "VSCodium"],
+    "term": ["iTerm2"],
+  ]
+}
 
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
+extension Me {
+  var age: Int {
+    Calendar.current.components(
+      [.year], from: birthday, to: .now
+    ).year!
+  }
+}
+```
 
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+I'm also low-key into music production. Why? I don't know. I'm weird.
