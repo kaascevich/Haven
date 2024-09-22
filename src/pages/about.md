@@ -7,7 +7,7 @@ title: "about me"
 
 いらっしゃいませ to my little online home!
 
-I'm Kaleb Ascevich, another random person on the internet doing internet things. I love Swift programming, especially for Mac apps. I'm also dabbling in Rust, NixOS, GarageBand, and Japanese (because those things clearly belong in the same sentence).
+I'm Kaleb Ascevich, another random person on the internet doing internet things. I love [Swift] programming, especially for Mac apps. I'm also dabbling in [Rust], [NixOS], [GarageBand], and Japanese (because those things clearly belong in the same sentence).
 
 Here's some basic information about me:
 
@@ -43,3 +43,10 @@ extension Me {
   }
 }
 ```
+
+Oh, and in case anyone was curious, [JavaScript is bad](http://destroyallsoftware.com/talks/wat). Especially from the perspective of a Swift developer (or, well, any developer who uses a language that's even _remotely_ type-safe).
+
+[Swift]: https://swift.org
+[Rust]: https://rust-lang.org
+[NixOS]: https://nixos.org
+[GarageBand]: https://apple.com/mac/garageband/
