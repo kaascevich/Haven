@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: "about me"
 ---
 
-![Me! But not quite.](../../assets/images/me.png "Me! But not quite.")
+![Me! But not quite.](../assets/images/me.png "Me! But not quite.")
 
 いらっしゃいませ to my little online home!
 
