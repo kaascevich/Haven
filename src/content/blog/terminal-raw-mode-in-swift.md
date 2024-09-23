@@ -1,5 +1,4 @@
 ---
-author: Kaleb A. Ascevich
 pubDatetime: 2024-09-22T20:46:00.000
 title: Terminal raw mode in Swift
 tags:

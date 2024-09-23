@@ -69,6 +69,10 @@
     @apply break-words hover:!text-skin-accent;
   }
 
+  .prose a[data-footnote-ref] {
+    @apply underline-offset-2;
+  }
+
   .prose th[align="left"], .prose td[align="left"] {
     text-align: left;
     padding-left: 0.5714286em;
