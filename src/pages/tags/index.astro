@@ -10,7 +10,8 @@ import { SITE } from "@config";
 
 const posts = await getCollection("blog");
 
-let tags = getUniqueTags(posts);
+// let tags = getUniqueTags(posts);
+let tags = [{tag:"swift",tagName:"swift"}];
 ---
 
 <Layout title={`tags | ${SITE.title}`}>
