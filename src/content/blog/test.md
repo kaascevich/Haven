@@ -1,6 +1,6 @@
 ---
 author: Kaleb A. Ascevich
-pubDatetime: 2024-09-22T13:43:56.816-04
+pubDatetime: 2024-09-22T13:43:56.816
 title: Markdown test
 tags:
   - test
