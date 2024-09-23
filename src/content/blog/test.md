@@ -18,7 +18,7 @@ This is a paragraph. **Here's** _some_ ~~styled~~ `text`.
 
 This is another paragraph, [with a link](https://apple.com), a footnote[^1], and an image.
 
-![image](/src/assets/images/me.png "alt text")
+![image](/haven/src/assets/images/me.png "alt text")
 
 ```swift
 let lang = "Swift"

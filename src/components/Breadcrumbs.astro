@@ -27,7 +27,7 @@ breadcrumbList[0] === "tags" &&
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
     <li>
-      <a href="/">home</a>
+      <a href="/haven">home</a>
       <span aria-hidden="true">&gt;&gt;</span>
     </li>
     {
@@ -40,7 +40,7 @@ breadcrumbList[0] === "tags" &&
           </li>
         ) : (
           <li>
-            <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
+            <a href={`/haven/${breadcrumb}/`}>{breadcrumb}</a>
             <span aria-hidden="true">&gt;&gt;</span>
           </li>
         )
