@@ -55,8 +55,8 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        serif: ["Iosevka Web Serif", "serif"],
-        mono: ["Iosevka Web Mono", "monospace"],
+        serif: ["Iosevka Etoile Web", "serif"],
+        mono: ["Iosevka Web", "monospace"],
       },
 
       typography: {
