@@ -44,7 +44,7 @@ extension Me {
 }
 ```
 
-Oh, and in case anyone was curious, [JavaScript is bad](http://destroyallsoftware.com/talks/wat). Especially from the perspective of a Swift developer (or, well, any developer who uses a language that's even _remotely_ type-safe).
+> Oh, and in case anyone was curious, [JavaScript is bad](http://destroyallsoftware.com/talks/wat). Especially from the perspective of a Swift developer (or, well, any developer who uses a language that's even _remotely_ type-safe).
 
 [Swift]: https://swift.org
 [Rust]: https://rust-lang.org
