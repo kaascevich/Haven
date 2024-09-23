@@ -7,7 +7,6 @@ interface Tag {
   tagName: string;
 }
 
-// FIXME: Not functional on GitHub Pages. Works fine locally.
 const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
   const tags: Tag[] = posts
     // .filter(postFilter)

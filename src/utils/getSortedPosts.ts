@@ -1,10 +1,9 @@
 import type { CollectionEntry } from "astro:content";
 import postFilter from "./postFilter";
 
-// FIXME: Not functional on GitHub Pages. Works fine locally.
 const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
   return posts
-    .filter(postFilter)
+    // .filter(postFilter)
     .sort(
       (a, b) =>
         Math.floor(
