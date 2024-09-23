@@ -14,11 +14,11 @@ const { activeNav } = Astro.props;
   <a id="skip-to-content" href="#main-content">skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/haven" class="logo whitespace-nowrap">
+      <a href="/" class="logo whitespace-nowrap">
         {
           LOGO_IMAGE.enable ? (
             <img
-              src={`/haven/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
+              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
               alt={SITE.title}
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}
@@ -56,23 +56,23 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/haven/posts/" class={activeNav === "posts" ? "active" : ""}>
+            <a href="/posts/" class={activeNav === "posts" ? "active" : ""}>
               posts
             </a>
           </li>
           <li>
-            <a href="/haven/tags/" class={activeNav === "tags" ? "active" : ""}>
+            <a href="/tags/" class={activeNav === "tags" ? "active" : ""}>
               tags
             </a>
           </li>
           <li>
-            <a href="/haven/about/" class={activeNav === "about" ? "active" : ""}>
+            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
               about
             </a>
           </li>
           <li>
             <LinkButton
-              href="/haven/search/"
+              href="/search/"
               className={`focus-outline p-3 sm:p-1 ${
                 activeNav === "search" ? "active" : ""
               } flex`}
@@ -86,7 +86,7 @@ const { activeNav } = Astro.props;
                   d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"
                 ></path>
               </svg>
-              <span class="sr-only">Search</span>
+              <span class="sr-only">search</span>
             </LinkButton>
           </li>
           {
