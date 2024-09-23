@@ -5,7 +5,7 @@ tags:
   - swift
   - snippets
   - c
-description: "When the standard library just doesn't quite cut it"
+description: When the standard library just doesn't quite cut it
 ---
 
 The Swift standard library, while quite minimal on its own, typically does its job and does it very very well. But sometimes, there's just something you need to do that the standard library can't help you with. I ran into this situation some months ago while I was working on [BrainflipKit](https://github.com/kaascevich/BrainflipKit) -- I needed a way to switch the terminal to raw mode so that programs could recieve input without the terminal line-buffering it.

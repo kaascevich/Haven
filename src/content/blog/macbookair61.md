@@ -1,17 +1,15 @@
 ---
 pubDatetime: 2024-09-23T14:43:15.000
-title: MacBookAir6,1
+title: MacBookAir6,1 (part 1)
 tags:
   - linux
   - nixos
   - mac
 draft: true
-description: "Putting far too much effort into an obsolete MacBook"
+description: Putting far too much effort into an obsolete MacBook
 ---
 
-> **ℹ️ Info:** This is still a work-in-progress. I'm not quite sure it'll ever be done, in fact. It's just one of those things.
-
-One day a few months ago, I ran into this glorious thing known as [NixOS](https://nixos.org). Being a Swift developer who's favorite-ish word is "declarative", I naturally wanted to give this a shot. But, of course, I can't just summon a perfectly-configured NixOS machine out of thin air (as nice as that would be). So I had to choose a device to be the victim of my experimentation.
+One day a few months ago, I ran into this glorious little thing known as [NixOS](https://nixos.org). Being a Swift developer who's favorite-ish word is "declarative", I naturally wanted to give this a shot. But, of course, I can't just summon a perfectly-configured NixOS machine out of thin air (as nice as that would be). So I had to choose a device to be the victim of my experimentation.
 
 I own a total of 3 laptops and one desktop:
 - a 13" M1 MacBook Air, which serves as my more-than-capable daily driver
@@ -29,9 +27,9 @@ That was... absolutely not a mistake, but still a bit of a pain.
 
 Marginally surprisingly (or unsurprisingly, depending on how you look at it), Linux on non-T2 Intel Macs actually has a fair bit of support. I flashed an SD card[^2] with a GNOME NixOS image from the Zenbook, and the MacBook booted it just fine.
 
-It was when I started exploring the live ISO when I realized that no, the MacBook had _not_ booted it just fine, it had booted it _mostly_ fine. Trying to connect to the network results in... literally nothing, because there's nothing to connect to the network with:
+It was when I started exploring the live ISO when I realized that no, the MacBook had _not_ booted it just fine, it had booted it _mostly_ fine. Trying to connect to the network results in literally nothing, because there's nothing to connect to the network with:
 
-<!-- insert screenshot here -->
+<!-- TODO: insert screenshot here -->
 
 Checking from the terminal reveals that the Wi-Fi adapter just... doesn't exist:
 
@@ -109,6 +107,8 @@ Yet another reflash, yet another reboot, and oh would you look at that, it actua
 $ ip link
 
 ```
+
+Now that the live ISO is actually functional (well, save for the camera, but who the hell actually cares about the camera in a 10-year-old MacBook Air), we can use it for its intended purpose in the next part. Somewhat.
 
 ----------
 
