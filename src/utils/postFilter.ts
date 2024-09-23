@@ -1,6 +1,7 @@
 import { SITE } from "@config";
 import type { CollectionEntry } from "astro:content";
 
+// FIXME: Not functional on GitHub Pages. Works fine locally.
 const postFilter = ({ data }: CollectionEntry<"blog">) => {
   const isPublishTimePassed =
     Date.now() >
