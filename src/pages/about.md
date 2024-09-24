@@ -21,11 +21,11 @@ struct Me: Person {
     calendar: .current,
     year: 2007, month: 11, day: 9
   ).date!
-  let address = Address<USA>(state: .florida)
+  let address = Address<USA>(province: .florida)
 
   var devices: [_: (any Device, OS)] = [
     "Kaleb's MacBook": (Mac(.macbookAir, 10, 1), .macOS),
-    "macbookair61": (Mac(.macbookAir, 6, 1), .linux("NixOS"))
+    "macbookair61": (Mac(.macbookAir, 6, 1), .linux(distro: "NixOS"))
   ]
   var langs: [Lang] = [.swift, .rust]
   let shell = Shell.nushell
