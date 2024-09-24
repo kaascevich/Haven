@@ -25,7 +25,9 @@ struct Me: Person {
 
   var devices: [_: (any Device, OS)] = [
     "Kaleb's MacBook": (Mac(.macbookAir, 10, 1), .macOS),
-    "macbookair61": (Mac(.macbookAir, 6, 1), .linux(distro: "NixOS"))
+    "macbookair61": (Mac(.macbookAir, 6, 1), .linux(distro: "NixOS")),
+    "zenbook": (PC(.laptop, "ASUS"), .windows),
+    "imacg4": (Mac(.powerMac, 4, 2), [.macOS, .macOS]),
   ]
   var langs: [Lang] = [.swift, .rust]
   let shell = Shell.nushell
