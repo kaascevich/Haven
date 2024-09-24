@@ -3,6 +3,7 @@ pubDatetime: 2024-09-24T12:39:37.000
 title: Why I have a Mac
 tags:
   - mac
+featured: true
 description: All of the reasons I've accumulated over the years
 ---
 
