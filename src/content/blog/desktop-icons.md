@@ -18,7 +18,7 @@ I use my desktop for 2 purposes and 2 purposes only:
 - As a user-controlled `tmp` folder. Whatever I put on it is stuff that I am actively working on, and as soon as I'm done with something, I either move it to a permanent home somewhere else (usually somewhere in another folder in my home directory), or throw it straight into the trash.
 - As a place to keep mounted disks. This kinda falls under the above category, because all external disk icons are automatically removed by the Finder as soon as they're unmounted. The internal disk is mostly there to keep my desktop from feeling _too_ empty.
 
-_"But how can you open ~~Google Chrome~~ Safari without a desktop icon?"_ I hear some (hopefully none) of you asking. Simple: I use these crazy things called _Launchpad_ and _the dock_.[^2] I pin apps that I use often to my dock, and keep everything else hidden away in Launchpad. Y'know, using them both for their _intended purposes_.
+_"But how can you open ~~Google Chrome~~ Safari without a desktop icon?"_ I hear some (hopefully none) of you asking. Simple: I use these crazy things called _Launchpad_ and the _dock_.[^2] I pin apps that I use often to my dock, and keep everything else hidden away in Launchpad. Y'know, using them both for their _intended purposes_.
 
 ## Things that aren't shortcuts
 
