@@ -19,5 +19,5 @@ It originally had a copy of Mac OS X[^2] 10.3 Panther installed. I wanted to rep
 ------
 
 [^1]: Why? I dunno. I guess I just really wanted a really old, really useless iMac.
-[^2]: I can't possibly be the only one who actually pronounces that as "mac oh-ess _ex_"... "mac oh-ess _ten_ ten point three panther" just sounds fundamentally wrong.
+[^2]: I can't possibly be the only one who actually pronounces that as "mac oh-ess _ex_"... "mac oh-ess ten point three panther" just sounds fundamentally wrong.
 [^3]: Yes, I connected this thing to the internet. This was 2 years ago, I was naïve back then. Don't judge me.
