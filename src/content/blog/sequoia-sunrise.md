@@ -8,6 +8,8 @@ tags:
 description: The new best semi-default wallpaper?
 ---
 
+This is one of a few new wallpapers added in macOS Sequoia, and serves as a semi-default of sorts:
+
 ![The first frame of an absolutely beautiful wallpaper.](../../assets/images/sequoia-sunrise.png)
 
 I flippin' _adore_ this wallpaper. Like, Sequoia Sunrise is to me what [Bliss] was to everyone who existed at the time -- it's just _perfect_.
