@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
+import remarkEmoji from "remark-emoji";
 import remarkCollapse from "remark-collapse";
 import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
@@ -34,6 +35,7 @@ export default defineConfig({
     remarkPlugins: [
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
+      remarkEmoji,
     ],
     rehypePlugins: [
       rehypeFigure,
