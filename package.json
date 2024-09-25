@@ -20,6 +20,7 @@
     "astro-opengraph-images": "^1.11.3",
     "fuse.js": "^7.0.0",
     "lodash.kebabcase": "^4.1.1",
+    "rehype-figure": "^1.0.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
     "satori": "^0.11.0",

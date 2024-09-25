@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
 import opengraphImages, { presets } from "astro-opengraph-images";
 import { ogRender } from "./src/ogRender";
@@ -34,7 +35,9 @@ export default defineConfig({
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
     ],
-    rehypePlugins: [],
+    rehypePlugins: [
+      rehypeFigure,
+    ],
     shikiConfig: {
       themes: { light: "catppuccin-latte", dark: "catppuccin-frappe" },
       wrap: true,

@@ -8,7 +8,7 @@ description: I hate them with an extreme passion
 
 This is what my current desktop setup looks like:
 
-![My desktop](../../assets/images/my-desktop.png)
+![My desktop.](../../assets/images/my-desktop.png)
 
 Ignoring the dock and menu bar for now, you'll notice my desktop is very clean compared to most other desktops you'll find out there ([r/unixporn](https://www.reddit.com/r/unixporn/) being a notable exception). Aside from the widgets, the only two things on it are my internal disk[^1] and a document for school that I'm working on.
 
