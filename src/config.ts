@@ -6,7 +6,6 @@ export const SITE: Site = {
   profile: "https://kaascevich.github.io/",
   desc: "my tiny little haven on the internet",
   title: "kaascevich",
-  ogImage: "index.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 5,
