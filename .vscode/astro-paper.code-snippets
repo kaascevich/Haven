@@ -9,7 +9,6 @@
       "modDatetime: $3",
       "title: $4",
       "featured: ${5|false,true|}",
-      "draft: ${6|true,false|}",
       "tags:",
       "  - $7",
       "description: $8",
