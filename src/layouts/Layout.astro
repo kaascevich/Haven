@@ -2,6 +2,7 @@
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
+import { getImagePath } from "astro-opengraph-images";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -22,23 +23,18 @@ const {
   author = SITE.author,
   profile = SITE.profile,
   description = SITE.desc,
-  ogImage = SITE.ogImage,
+  ogImage = getImagePath({ url: Astro.url, site: Astro.site }),
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
   pubDatetime,
   modDatetime,
   scrollSmooth = false,
 } = Astro.props;
 
-const socialImageURL = new URL(
-  ogImage ?? SITE.ogImage ?? "og.png",
-  Astro.url.origin
-).href;
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: `${title}`,
-  image: `${socialImageURL}`,
+  image: `${ogImage}`,
   datePublished: `${pubDatetime?.toISOString()}`,
   ...(modDatetime && { dateModified: modDatetime.toISOString() }),
   author: [
@@ -65,16 +61,17 @@ const structuredData = {
 
     <!-- General Meta Tags -->
     <title>{title}</title>
-    <meta name="title" content={title}/>
+    <meta name="title" content="article"/>
     <meta name="description" content={description}/>
     <meta name="author" content={author}/>
     <link rel="sitemap" href="/sitemap-index.xml"/>
 
     <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={title}/>
     <meta property="og:title" content={title}/>
     <meta property="og:description" content={description}/>
     <meta property="og:url" content={canonicalURL}/>
-    <meta property="og:image" content={socialImageURL}/>
+    <meta property="og:image" content={ogImage}/>
 
     <!-- Article Published/Modified time -->
     {
@@ -99,7 +96,7 @@ const structuredData = {
     <meta property="twitter:url" content={canonicalURL}/>
     <meta property="twitter:title" content={title}/>
     <meta property="twitter:description" content={description}/>
-    <meta property="twitter:image" content={socialImageURL}/>
+    <meta property="twitter:image" content={ogImage}/>
 
     <!-- Google JSON-LD Structured data -->
     <script

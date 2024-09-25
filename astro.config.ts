@@ -1,9 +1,12 @@
+import fs from "node:fs";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
+import opengraphImages, { presets } from "astro-opengraph-images";
+import { ogRender } from "./src/ogRender";
 import { SITE } from "./src/config";
 
 // https://astro.build/config
@@ -15,15 +18,26 @@ export default defineConfig({
     }),
     react(),
     sitemap(),
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: "Iosevka Etoile Web",
+            weight: 600,
+            style: "normal",
+            data: fs.readFileSync("public/fonts/IosevkaEtoile/TTF/IosevkaEtoile-SemiBold.ttf"),
+          },
+        ],
+      },
+      render: ogRender,
+    }),
   ],
   markdown: {
     remarkPlugins: [
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
     ],
-    rehypePlugins: [
-      
-    ],
+    rehypePlugins: [],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "catppuccin-latte", dark: "catppuccin-frappe" },
