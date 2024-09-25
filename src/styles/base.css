@@ -48,10 +48,6 @@
   a {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
-
-  figcaption {
-    font-style: italic;
-  }
   
   svg {
     @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
@@ -62,7 +58,26 @@
   }
 
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base prose-h3:italic prose-p:!text-skin-base prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-4 hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80 prose-figcaption:!text-skin-base prose-figcaption:opacity-70 prose-strong:!text-skin-base prose-code:rounded prose-code:bg-skin-card/75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none prose-ol:!text-skin-base prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent prose-table:text-skin-base prose-th:border prose-th:border-skin-line prose-td:border prose-td:border-skin-line prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line prose-hr:!border-skin-line;
+    @apply prose-headings:!mb-3 prose-headings:!text-skin-base;
+    @apply prose-h3:italic;
+    @apply prose-p:!text-skin-base;
+    @apply prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-4 hover:prose-a:text-skin-accent;
+    @apply prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80;
+    @apply prose-figcaption:!text-skin-base prose-figcaption:opacity-70;
+    @apply prose-strong:!text-skin-base;
+    @apply prose-code:rounded prose-code:bg-skin-card/75 prose-code:p-1 prose-code:before:!content-none prose-code:after:!content-none;
+    @apply prose-ol:!text-skin-base;
+    @apply prose-ul:overflow-x-clip prose-ul:!text-skin-base;
+    @apply prose-li:marker:!text-skin-accent;
+    @apply prose-table:text-skin-base;
+    @apply prose-th:border prose-th:border-skin-line;
+    @apply prose-td:border prose-td:border-skin-line;
+    @apply prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line;
+    @apply prose-hr:!border-skin-line;
+  }
+
+  .prose figcaption {
+    @apply italic text-center;
   }
 
   .prose strong {
@@ -78,16 +93,16 @@
   }
 
   .prose th[align="left"], .prose td[align="left"] {
-    text-align: left;
+    @apply text-left;
     padding-left: 0.5714286em;
   }
 
   .prose th[align="center"], .prose td[align="center"] {
-    text-align: center;
+    @apply text-center;
   }
 
   .prose th[align="right"], .prose td[align="right"] {
-    text-align: right;
+    @apply text-right;
     padding-right: 0.5714286em;
   }
 
@@ -123,12 +138,12 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    @apply bg-skin-fill;
+    @apply display-none;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-skin-card;
+    @apply bg-skin-card rounded-md;
   }
 
   /* Handle on hover */
