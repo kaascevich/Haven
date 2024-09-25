@@ -3,7 +3,6 @@ pubDatetime: 2024-09-23T17:51:54.000
 title: '"The iMac"'
 tags:
   - mac
-draft: true
 featured: true
 description: It's useless, and I love it
 ---

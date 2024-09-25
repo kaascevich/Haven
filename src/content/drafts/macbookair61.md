@@ -5,7 +5,6 @@ tags:
   - linux
   - nixos
   - mac
-draft: true
 description: Putting far too much effort into an obsolete MacBook
 ---
 
