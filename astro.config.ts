@@ -2,12 +2,12 @@ import fs from "node:fs";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
+import opengraphImages, { presets } from "astro-opengraph-images";
 import remarkCollapse from "remark-collapse";
 import remarkEmoji from "remark-emoji";
 import remarkToc from "remark-toc";
 import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
-import opengraphImages, { presets } from "astro-opengraph-images";
 import { ogRender } from "./src/ogRender";
 import { SITE } from "./src/config";
 
