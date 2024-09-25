@@ -85,7 +85,7 @@ const nextPost =
     </article>
 
     <ul class="my-8">
-      {tags.map(tag => <Tag tag={slugifyStr(tag)}/>)}
+      {tags.map((tag: string) => <Tag tag={slugifyStr(tag)}/>)}
     </ul>
 
     <div
@@ -256,20 +256,29 @@ const nextPost =
       const wrapper = document.createElement("div");
       wrapper.style.position = "relative";
 
-      const copyButton = document.createElement("button");
-      copyButton.className =
-        "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
-      copyButton.innerHTML = copyButtonLabel;
-      codeBlock.setAttribute("tabindex", "0");
-      codeBlock.appendChild(copyButton);
+      let languageName = codeBlock.getAttribute("data-language") || "";
+
+      if (languageName !== "console") {
+        const copyButton = document.createElement("button");
+        copyButton.className =
+          "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
+        copyButton.innerHTML = copyButtonLabel;
+        codeBlock.setAttribute("tabindex", "0");
+        codeBlock.appendChild(copyButton);
+        
+        copyButton.addEventListener("click", async () => {
+          await copyCode(codeBlock, copyButton);
+        });
+      }
+
+      const languageLabel = document.createElement("span");
+      languageLabel.className = "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium";
+      languageLabel.innerHTML = languageName;
+      codeBlock.appendChild(languageLabel);
 
       // wrap codebock with relative parent element
       codeBlock?.parentNode?.insertBefore(wrapper, codeBlock);
       wrapper.appendChild(codeBlock);
-
-      copyButton.addEventListener("click", async () => {
-        await copyCode(codeBlock, copyButton);
-      });
     }
 
     async function copyCode(block, button) {
@@ -283,7 +292,7 @@ const nextPost =
 
       setTimeout(() => {
         button.innerText = copyButtonLabel;
-      }, 700);
+      }, 800);
     }
   }
   attachCopyButtons();
