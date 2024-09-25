@@ -21,7 +21,7 @@ struct Me: Person {
     calendar: .current,
     year: 2007, month: 11, day: 9
   ).date!
-  let address = Address<USA>(province: .florida)
+  let address = Address(state: .florida, country: .usa)
 
   var devices: [_: (any Device, OS)] = [
     "Kaleb's MacBook": (Mac(.macbookAir, 10, 1), .macOS),
