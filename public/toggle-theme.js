@@ -40,9 +40,20 @@ function reflectPreference() {
     const bgColor = computedStyles.backgroundColor;
 
     // Set the background color in <meta theme-color .../>
-    document
-      .querySelector("meta[name='theme-color']")
-      ?.setAttribute("content", bgColor);
+    document.querySelector("meta[name='theme-color']")?.setAttribute("content", bgColor);
+
+    // Set the giscus theme
+    let oldTheme = themeValue === "dark" ? "latte" : "frappe"
+    let newTheme = themeValue === "dark" ? "frappe" : "latte"
+
+    const giscusTheme = `https://giscus.catppuccin.com/themes/${newTheme}-no-loader.css`
+    document.querySelector("#giscus-script")?.setAttribute("data-theme", giscusTheme);
+
+    const giscusFrame = document.querySelector('.giscus-frame')
+    if (giscusFrame) {
+      // very hackily reload the frame
+      document.querySelector('.giscus-frame').src = giscusFrame.src.replace(oldTheme, newTheme)
+    }
   }
 }
 
