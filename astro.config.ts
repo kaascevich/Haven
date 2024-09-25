@@ -9,13 +9,10 @@ import opengraphImages, { presets } from "astro-opengraph-images";
 import { ogRender } from "./src/ogRender";
 import { SITE } from "./src/config";
 
-// https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
+    tailwind({ applyBaseStyles: false }),
     react(),
     sitemap(),
     opengraphImages({
@@ -39,7 +36,6 @@ export default defineConfig({
     ],
     rehypePlugins: [],
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
       themes: { light: "catppuccin-latte", dark: "catppuccin-frappe" },
       wrap: true,
     },

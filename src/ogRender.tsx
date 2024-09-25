@@ -1,7 +1,8 @@
+import { SITE } from "./config";
 import type { RenderFunctionInput } from "astro-opengraph-images";
 
 export async function ogRender({ title, description }: RenderFunctionInput): Promise<React.ReactNode> {
-  let articleTitle = title.replace(" | kaascevich", "")
+  let articleTitle = title.replace(` | ${SITE.title}`, "");
 
   return Promise.resolve(
     <div style={{
