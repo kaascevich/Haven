@@ -1,7 +1,7 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://kaascevich.github.io/", // replace this with your deployed domain
+  website: "https://kaascevich.github.io/",
   author: "Kaleb A. Ascevich",
   profile: "https://kaascevich.github.io/",
   desc: "my tiny little haven on the internet",
@@ -13,15 +13,15 @@ export const SITE: Site = {
 };
 
 export const LOCALE = {
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  langTag: ["en-US"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: "en",
+  langTag: ["en-US"],
 } as const;
 
 export const SOCIALS: SocialObjects = [
   {
-    name: "Github",
+    name: "GitHub",
     href: "https://github.com/kaascevich",
-    linkTitle: ` ${SITE.title} on Github`,
+    linkTitle: ` ${SITE.title} on GitHub`,
     active: true,
   },
   {
