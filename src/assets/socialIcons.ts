@@ -155,7 +155,7 @@ const socialIcons = {
     <path d="M12 8l1 -5l6 1"/>
     <circle cx="19" cy="4" r="1"/>
     <circle cx="9" cy="13" r=".5" fill="currentColor"/>
-    <circle cx="15" cy="13" r=".5" fill="currentColor/>
+    <circle cx="15" cy="13" r=".5" fill="currentColor"/>
     <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5"/>
   </svg>`,
   Skype: `<svg
