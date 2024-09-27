@@ -1,4 +1,3 @@
-import { SITE } from "@config";
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({

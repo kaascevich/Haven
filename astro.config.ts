@@ -2,7 +2,7 @@ import fs from "node:fs";
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
-import opengraphImages, { presets } from "astro-opengraph-images";
+import opengraphImages from "astro-opengraph-images";
 import remarkCollapse from "remark-collapse";
 import remarkEmoji from "remark-emoji";
 import remarkToc from "remark-toc";
