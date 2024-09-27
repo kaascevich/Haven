@@ -5,6 +5,7 @@ import react from "@astrojs/react";
 import opengraphImages from "astro-opengraph-images";
 import remarkCollapse from "remark-collapse";
 import remarkEmoji from "remark-emoji";
+import remarkReadingTime from "./src/utils/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
 import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
@@ -36,6 +37,7 @@ export default defineConfig({
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
       remarkEmoji,
+      remarkReadingTime,
     ],
     rehypePlugins: [
       rehypeFigure,

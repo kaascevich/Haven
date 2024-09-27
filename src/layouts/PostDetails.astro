@@ -20,6 +20,7 @@ const { post, posts } = Astro.props;
 const {
   title,
   description,
+  readingTime,
   canonicalURL,
   pubDatetime,
   modDatetime,
@@ -32,6 +33,7 @@ const layoutProps = {
   title: `${title} | ${SITE.title}`,
   ogTitle: title,
   description,
+  readingTime,
   pubDatetime,
   modDatetime,
   canonicalURL,
@@ -74,6 +76,7 @@ const nextPost =
       size="lg"
       className="my-2"
     />
+    <span class="flex items-center space-x-2 opacity-80 italic">{readingTime}</span>
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content/>
     </article>
