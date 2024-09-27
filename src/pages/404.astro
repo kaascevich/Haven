@@ -14,12 +14,15 @@ import LinkButton from "@components/LinkButton.astro";
       <h1>404</h1>
       <span aria-hidden="true">we all know what this means&hellip;</span>
       <p>page not found</p>
-      <LinkButton
-        href="/"
-        className="my-6 text-lg underline decoration-dashed underline-offset-8"
+      <button
+        class="text-lg focus-outline mb-2 mt-4 flex hover:opacity-75"
+        onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
       >
-        go back home
-      </LinkButton>
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
+        </svg>
+        <span>go back</span>
+      </button>
     </div>
   </main>
 
