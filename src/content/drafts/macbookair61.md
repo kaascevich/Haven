@@ -8,7 +8,7 @@ tags:
 description: Putting far too much effort into an obsolete MacBook
 ---
 
-One day a few months ago, I ran into this glorious little thing known as [NixOS](https://nixos.org). Being a Swift developer who's favorite-ish word is "declarative", I naturally wanted to give this a shot. But, of course, I can't just summon a perfectly-configured NixOS machine out of thin air (as nice as that would be). So I had to choose a device to be the victim of my experimentation.
+One day a few months ago, I ran into this glorious little thing known as [NixOS](https://nixos.org). Being a Swift developer whose favorite-ish word is "declarative", I naturally wanted to give this a shot. But, of course, I can't just summon a perfectly-configured NixOS machine out of thin air (as nice as that would be). So I had to choose a device to be the victim of my experimentation.
 
 I own a total of 3 laptops and one desktop:
 - a 13" M1 MacBook Air, which serves as my more-than-capable daily driver
@@ -16,7 +16,7 @@ I own a total of 3 laptops and one desktop:
 - an 11" early-2014 MacBook Air, which doesn't really serve any useful purpose[^1]
 - an iMac G4 that's 3 years older than me
 
-Obviously, the 20-year-old iMac is not a contender. My M1 MacBook, by the virture of being an M1 MacBook, is also off the table. The Zenbook has historically served as my all-around plaything, but I had just reinstalled Windows and spent far too much time getting it to a usable state, so I wasn't gonna be touching that for a while.
+Obviously, the 20-year-old iMac is not a contender. My M1 MacBook, by virture of being an M1 MacBook, is also off the table. The Zenbook has historically served as my all-around plaything, but I had just reinstalled Windows and spent far too much time getting it to a usable state, so I wasn't gonna be touching that for a while.
 
 So, my brain went: "Hey, I have that old Intel MacBook lying around. Why don't I try NixOS on that?"
 
@@ -84,7 +84,9 @@ Nope, that ain't it.
 
 Long story short: `wpa_supplicant` is the thing NixOS uses by default to manage Wi-Fi connections. Apparently, it sucks. (At least, for me, it does.)
 
-`iwd` worked a whole lot better for me, and was also a whole lot easier to use from the command line. So, I added this to my `iso.nix`:
+`iwd` worked a whole lot better for me, and was also a whole lot easier to use from the command line. The primary downside is that you can't specify connections declaratively in your configuration, but since this is an inherently portable device, it's easier to just connect to networks on-the-fly with `iwctl` or NetworkManager.
+
+So, I added this to my `iso.nix`:
 
 ```nix
 { config, pkgs, ... }: {
