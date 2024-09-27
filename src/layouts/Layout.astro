@@ -7,7 +7,6 @@ import { getImagePath } from "astro-opengraph-images";
 export interface Props {
   title?: string;
   ogTitle?: string;
-  author?: string;
   profile?: string;
   description?: string;
   canonicalURL?: string;
@@ -19,7 +18,6 @@ export interface Props {
 const {
   title = SITE.title,
   ogTitle = title,
-  author = SITE.author,
   profile = SITE.profile,
   description = SITE.desc,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
@@ -40,7 +38,7 @@ const structuredData = {
   author: [
     {
       "@type": "Person",
-      name: `${author}`,
+      name: `${SITE.author}`,
       url: `${profile}`,
     },
   ],
@@ -63,7 +61,7 @@ const structuredData = {
     <title>{title}</title>
     <meta name="title" content="article"/>
     <meta name="description" content={description}/>
-    <meta name="author" content={author}/>
+    <meta name="author" content={SITE.author}/>
     <link rel="sitemap" href="/sitemap-index.xml"/>
 
     <!-- Open Graph / Facebook -->

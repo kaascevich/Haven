@@ -19,7 +19,6 @@ const { post, posts } = Astro.props;
 
 const {
   title,
-  author,
   description,
   canonicalURL,
   pubDatetime,
@@ -32,7 +31,6 @@ const { Content } = await post.render();
 const layoutProps = {
   title: `${title} | ${SITE.title}`,
   ogTitle: title,
-  author,
   description,
   pubDatetime,
   modDatetime,
