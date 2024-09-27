@@ -1,3 +1,4 @@
+import type { GiscusProps } from "@giscus/react";
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
@@ -43,3 +44,16 @@ export const SOCIALS: SocialObjects = [
     active: true,
   },
 ];
+
+export const GISCUS: GiscusProps = {
+  repo: "kaascevich/kaascevich.github.io",
+  repoId: "R_kgDOM1clig",
+  category: "Comments",
+  categoryId: "DIC_kwDOM1clis4CiycT",
+  mapping: "og:title",
+  strict: "1",
+  reactionsEnabled: "1",
+  emitMetadata: "0",
+  inputPosition: "top",
+  lang: "en",
+}
