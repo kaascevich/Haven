@@ -15,6 +15,17 @@ const blog = defineCollection({
     }),
 });
 
+const songs = defineCollection({
+  type: "data",
+  schema: () =>
+    z.object({
+      title: z.string(),
+      composer: z.string().optional(),
+      source: z.string(),
+    }),
+});
+
 export const collections = {
   "blog": blog,
+  "songs": songs,
 };

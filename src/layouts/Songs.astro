@@ -1,0 +1,48 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import SongCard from "@components/SongCard";
+import { SITE } from "@config";
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  songs: CollectionEntry<"songs">[];
+}
+
+const { songs } = Astro.props;
+
+const originals = songs.filter(song => !song.data.composer)
+const remixes = songs.filter(song => song.data.composer)
+---
+
+<Layout title={`songs | ${SITE.title}`}>
+  <Header activeNav="songs"/>
+  <Main pageTitle="songs" pageDesc="all the songs I've created or remixed">
+    <section id="originals">
+      <h2>originals</h2>
+      <ul>
+        {originals.map(({ data }) => (<SongCard frontmatter={data}/>))}
+      </ul>
+    </section>
+
+    <section id="remixes">
+      <h2>remixes</h2>
+      <ul>
+        {remixes.map(({ data }) => (<SongCard frontmatter={data}/>))}
+      </ul>
+    </section>
+  </Main>
+
+  <Footer noMarginTop/>
+</Layout>
+
+<style>
+  #originals, #remixes {
+    @apply pb-3 pt-3 px-0;
+  }
+  #originals h2, #remixes h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+</style>

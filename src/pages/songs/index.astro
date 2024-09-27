@@ -1,0 +1,8 @@
+---
+import Songs from "@layouts/Songs.astro";
+import { getCollection } from "astro:content";
+
+const songs = await getCollection("songs");
+---
+
+<Songs {songs}/>
