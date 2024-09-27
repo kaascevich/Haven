@@ -1,4 +1,4 @@
 # Todo
 
 - [x] Add support for comments
-- [ ] Add music stuffs
+- [x] Add music stuffs
