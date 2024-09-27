@@ -21,7 +21,6 @@ const songs = defineCollection({
     z.object({
       title: z.string(),
       composer: z.string().optional(),
-      source: z.string(),
     }),
 });
 
