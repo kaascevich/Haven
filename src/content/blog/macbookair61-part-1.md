@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-09-23T14:43:15.000
+pubDatetime: 2024-09-27T18:45:03.000
 title: MacBookAir6,1 (part 1)
 tags:
   - linux
@@ -28,13 +28,14 @@ Marginally surprisingly (or unsurprisingly, depending on how you look at it), Li
 
 It was when I started exploring the live ISO when I realized that no, the MacBook had _not_ booted it just fine, it had booted it _mostly_ fine. Trying to connect to the network results in literally nothing, because there's nothing to connect to the network with:
 
-<!-- TODO: insert screenshot here -->
+!["What's this Wi-Fi thing you keep rambling about?"](../../assets/images/no-wifi.png "A screenshot of the GNOME status menus, showing a complete lack of Wi-Fi options.")[^3]
 
 Checking from the terminal reveals that the Wi-Fi adapter just... doesn't exist:
 
 ```console
 $ ip link
-
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 ```
 
 I found this to be rather puzzling. After a whole bunch of internet-ing, though, the problem turned out to be rather simple: the official NixOS ISOs don't include the `broadcom-sta` driver, which is the only one that supports the BCM4360 Wi-Fi card in my particular MacBook. The reason for this omission? Licensing.
@@ -74,17 +75,22 @@ nixos-21.11.333823.96b4157790f-x86_64-linux.iso
 Reflash the SD card with this new image, boot it, and...
 
 ```console
-$ ip link
-
+[nixos@nixos:~]$ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN mode DORMANT group default qlen 1000
+    link/ether 34:36:3b:5f:e0:2a brd ff:ff:ff:ff:ff:ff
 ```
 
-Nope, that ain't it.
+Eyy, we're getting somewhere!
+
+Nothing seems to appear in the Wi-Fi networks list, though... that's weird.
 
 ### `wpa_supplican't`
 
-Long story short: `wpa_supplicant` is the thing NixOS uses by default to manage Wi-Fi connections. Apparently, it sucks. (At least, for me, it does.)
+So, long story short[^4]: `wpa_supplicant` is the thing NixOS uses by default to manage Wi-Fi connections. Apparently, it sucks. (At least, for me, it does.)
 
-`iwd` worked a whole lot better for me, and was also a whole lot easier to use from the command line. The primary downside is that you can't specify connections declaratively in your configuration, but since this is an inherently portable device, it's easier to just connect to networks on-the-fly with `iwctl` or NetworkManager.
+`iwd` worked a whole lot better for me, and was also a whole lot easier to use from the command line. The primary downside is that you can't specify connections declaratively in your configuration, but since this is an inherently portable device, it's easier to just connect to networks on-the-fly with `iwctl` or the GUI like you would on macOS.
 
 So, I added this to my `iso.nix`:
 
@@ -102,11 +108,54 @@ So, I added this to my `iso.nix`:
 }
 ```
 
-Yet another reflash, yet another reboot, and oh would you look at that, it actually works this time!
+Yet another reflash, yet another reboot, and a brief sanity check:
 
 ```console
 $ ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN mode DORMANT group default qlen 1000
+    link/ether 34:36:3b:5f:e0:2a brd ff:ff:ff:ff:ff:ff
+```
 
+Good, I didn't fry anything.
+
+Now for the ultimate test:
+
+```console
+$ iwctl
+NetworkConfigurationEnabled: disabled
+StateDirectory: /var/lib/iwd
+Version: 2.19
+[iwd]# station eth0 scan
+[iwd]# station eth0 get-networks
+                               Available Networks
+--------------------------------------------------------------------------------
+      Network Name                      Security            Signal
+--------------------------------------------------------------------------------
+      da house 5                        psk                 ****
+      da house 5 Game                   psk                 ****
+      da house 2.4                      psk                 ****
+
+[iwd]# station eth0 connect "da house 5"
+Type the network passphrase for da house 5 psk.
+Passphrase: **********************
+[iwd]# exit
+
+[iwd]#
+```
+
+And finally, a good ol' `ping`:
+
+```console
+$ ping -c 2 example.com
+PING example.com (93.184.215.14) 56(84) bytes of data.
+64 bytes from 93.184.215.14: icmp_seq=1 ttl=53 time=24.8 ms
+64 bytes from 93.184.215.14: icmp_seq=2 ttl=53 time=28.9 ms
+
+--- example.com ping statistics ---
+2 packets transmitted, 2 recieved, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev - 24.785/26.845/28.905/2.060 ms
 ```
 
 Now that the live ISO is actually functional (well, save for the camera, but who the hell actually cares about the camera in a 10-year-old MacBook Air), we can use it for its intended purpose in the next part. Somewhat.
@@ -115,3 +164,5 @@ Now that the live ISO is actually functional (well, save for the camera, but who
 
 [^1]: FYI: it still doesn't. None of this madness actually serves a practical purpose. I just get bored sometimes.
 [^2]: Owning a lot of Nintendo consoles results in you having a lot of SD cards lying around.
+[^3]: In case you were curious: yes, I did try Bluetooth tethering at some point. Here's what I learned from it: don't try Bluetooth tethering if you don't have an unlimited hotspot plan and a heck of a lot of time to gruesomely murder.
+[^4]: Because I don't exactly remember the long story. This was a while ago.
