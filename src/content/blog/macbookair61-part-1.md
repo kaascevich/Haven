@@ -26,9 +26,9 @@ That was... absolutely not a mistake, but still a bit of a pain.
 
 Marginally surprisingly (or unsurprisingly, depending on how you look at it), Linux on non-T2 Intel Macs actually has a fair bit of support. I flashed an SD card[^2] with a GNOME NixOS image from the Zenbook, and the MacBook booted it just fine.
 
-It was when I started exploring the live ISO when I realized that no, the MacBook had _not_ booted it just fine, it had booted it _mostly_ fine. Trying to connect to the network results in literally nothing, because there's nothing to connect to the network with:
+It was when I started exploring the live ISO when I realized that no, the MacBook had _not_ booted it just fine, it had booted it _mostly_ fine. Trying to connect to the network results in literally nothing, because there's nothing to connect to the network with:[^3]
 
-!["What's this Wi-Fi thing you keep rambling about?"](../../assets/images/no-wifi.png "A screenshot of the GNOME status menus, showing a complete lack of Wi-Fi options.")[^3]
+!["What's this Wi-Fi thing you keep rambling about?"](../../assets/images/no-wifi.png "A screenshot of the GNOME status menus, showing a complete lack of Wi-Fi options.")
 
 Checking from the terminal reveals that the Wi-Fi adapter just... doesn't exist:
 
