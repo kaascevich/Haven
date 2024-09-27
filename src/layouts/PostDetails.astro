@@ -235,6 +235,11 @@ const nextPost =
       const span = document.createElement("span");
       span.ariaHidden = "true";
       span.innerText = "#";
+
+      // hide it in reader view
+      span.hidden = true;
+      span.style.display = "inline";
+      
       link.appendChild(span);
       heading.appendChild(link);
     }
@@ -269,6 +274,11 @@ const nextPost =
       const languageLabel = document.createElement("span");
       languageLabel.className = "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium";
       languageLabel.innerHTML = languageName;
+
+      // hide the language name in reader view
+      languageLabel.hidden = true;
+      languageLabel.style.display = "inline";
+      
       codeBlock.appendChild(languageLabel);
 
       // wrap codebock with relative parent element
