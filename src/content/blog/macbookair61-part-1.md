@@ -75,7 +75,7 @@ nixos-21.11.333823.96b4157790f-x86_64-linux.iso
 Reflash the SD card with this new image, boot it, and...
 
 ```console
-[nixos@nixos:~]$ ip link
+$ ip link
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN mode DORMANT group default qlen 1000
