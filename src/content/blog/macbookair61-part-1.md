@@ -158,7 +158,7 @@ PING example.com (93.184.215.14) 56(84) bytes of data.
 rtt min/avg/max/mdev - 24.785/26.845/28.905/2.060 ms
 ```
 
-Now that the live ISO is actually functional (well, save for the camera, but who the hell actually cares about the camera in a 10-year-old MacBook Air), we can use it for its intended purpose in the next part. Somewhat.
+Now that the live ISO is actually functional (well, save for the camera, but who the hell actually cares about the camera in a 10-year-old MacBook Air), we can use it for its intended purpose in [the next part](macbookair61-part-2). Somewhat.
 
 ----------
 
