@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,300..1000,0.5,0..1,0..1&display=swap");
+@import "./recursive.css";
 @import "./fafo-nihongo.css";
 
 @tailwind base;
@@ -37,12 +37,7 @@
 
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
-    font-stretch: expanded;
-  }
-
-  em {
-    font-variation-settings: "slnt" -10, "CRSV" 1;
-  }
+  }z
 
   section,
   footer {
@@ -85,7 +80,7 @@
   }
 
   .prose strong {
-    font-weight: 900;
+    font-weight: 800;
   }
 
   .prose a {
