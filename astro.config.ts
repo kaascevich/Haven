@@ -21,10 +21,10 @@ export default defineConfig({
       options: {
         fonts: [
           {
-            name: "Iosevka Etoile Web",
+            name: "Recursive",
             weight: 600,
             style: "normal",
-            data: fs.readFileSync("public/fonts/IosevkaEtoile-SemiBold.ttf"),
+            data: fs.readFileSync("public/fonts/recursive-sans-semibold.ttf"),
           },
         ],
       },

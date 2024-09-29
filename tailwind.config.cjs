@@ -55,8 +55,14 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        serif: ["Iosevka Etoile Web", "serif"],
-        mono: ["Iosevka Web", "monospace"],
+        sans: [
+          "Recursive, 'Fafo Nihongo', sans-serif",
+          { fontVariationSettings: "'CASL' 0.25" },
+        ],
+        mono: [
+          "Recursive, monospace",
+          { fontVariationSettings: "'CASL' 0.25, 'MONO' 1" },
+        ],
       },
 
       typography: {

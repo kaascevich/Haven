@@ -13,7 +13,7 @@ export default async function renderOgImage({ title, description }: RenderFuncti
       backgroundColor: "#303446",
       padding: "55px 70px",
       color: "#c6d0f5",
-      fontFamily: "Iosevka Etoile Web",
+      fontFamily: "Recursive",
       fontSize: 72,
     }}>
       <div style={{ color: "#8caaee" }}>
