@@ -4,12 +4,11 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import opengraphImages from "astro-opengraph-images";
 import remarkCollapse from "remark-collapse";
-import remarkEmoji from "remark-emoji";
 import remarkReadingTime from "./src/utils/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
 import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
-import { ogRender } from "./src/utils/renderOgImage";
+import renderOgImage from "./src/utils/renderOgImage";
 import { SITE } from "./src/config";
 
 export default defineConfig({
@@ -29,14 +28,13 @@ export default defineConfig({
           },
         ],
       },
-      render: ogRender,
+      render: renderOgImage,
     }),
   ],
   markdown: {
     remarkPlugins: [
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
-      remarkEmoji,
       remarkReadingTime,
     ],
     rehypePlugins: [
