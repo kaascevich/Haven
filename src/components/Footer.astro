@@ -16,7 +16,7 @@ const { noMarginTop = false } = Astro.props;
   <div class="footer-wrapper">
     <Socials centered/>
     <div class="copyright-wrapper">
-      <span>Copyright &copy; {currentYear} Kaleb A. Ascevich</span>
+      Copyright &copy; {currentYear} Kaleb A. Ascevich
     </div>
   </div>
 </footer>
@@ -36,8 +36,5 @@ const { noMarginTop = false } = Astro.props;
   }
   .copyright-wrapper {
     @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
-  }
-  .separator {
-    @apply hidden sm:inline;
   }
 </style>

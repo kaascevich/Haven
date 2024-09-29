@@ -45,7 +45,7 @@ export default function Comments({
 
   return (
     <div className="mt-8">
-      <Giscus theme={theme === "light" ? lightTheme : darkTheme} {...GISCUS} />
+      <Giscus theme={theme === "light" ? lightTheme : darkTheme} {...GISCUS}/>
     </div>
   );
 }
