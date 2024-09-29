@@ -229,7 +229,7 @@ const nextPost =
     for (const heading of headings) {
       heading.classList.add("group");
       const link = document.createElement("a");
-      link.className = "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.className = "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100 not-italic";
       link.href = "#" + heading.id;
 
       const span = document.createElement("span");
@@ -270,7 +270,8 @@ const nextPost =
       }
 
       const languageLabel = document.createElement("div");
-      languageLabel.className = "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium bg-skin-fill";
+      languageLabel.className =
+        "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium bg-skin-fill not-italic";
       languageLabel.innerHTML = languageName;
 
       // hide the language name in reader view
