@@ -1,5 +1,5 @@
-@import url("/fonts/Iosevka/Iosevka.css");
-@import url("/fonts/IosevkaEtoile/IosevkaEtoile.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka/iosevka.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/Iosevka/6.0.0/iosevka-etoile/iosevka-etoile.min.css");
 
 @tailwind base;
 @tailwind components;

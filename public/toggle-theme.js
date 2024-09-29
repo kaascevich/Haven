@@ -1,14 +1,9 @@
-const primaryColorScheme = ""; // "light" | "dark"
-
 // Get theme data from local storage
-const currentTheme = localStorage.getItem("theme");
+const currentTheme = localStorage.theme;
 
 function getPreferTheme() {
   // return theme value in local storage if it is set
   if (currentTheme) return currentTheme;
-
-  // return primary color scheme if it is set
-  if (primaryColorScheme) return primaryColorScheme;
 
   // return user device's prefer color scheme
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -17,11 +12,6 @@ function getPreferTheme() {
 }
 
 let themeValue = getPreferTheme();
-
-function setPreference() {
-  localStorage.setItem("theme", themeValue);
-  reflectPreference();
-}
 
 function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
@@ -46,6 +36,11 @@ function reflectPreference() {
 
 // set early so no page flashes / CSS is made aware
 reflectPreference();
+
+function setPreference() {
+  localStorage.theme = themeValue;
+  reflectPreference();
+}
 
 window.onload = () => {
   function setThemeFeature() {

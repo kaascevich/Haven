@@ -13,7 +13,7 @@ export const getReadingTime = async () => {
   const globPosts = import.meta.glob<Frontmatter>("../content/blog/*.md");
 
   // Then, set those frontmatter value in a JS Map with key value pair
-  const mapFrontmatter = new Map();
+  const mapFrontmatter = new Map<string, string>();
   const globPostsValues = Object.values(globPosts);
   await Promise.all(
     globPostsValues.map(async globPost => {

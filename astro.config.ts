@@ -9,7 +9,7 @@ import remarkReadingTime from "./src/utils/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
 import rehypeFigure from "rehype-figure";
 import sitemap from "@astrojs/sitemap";
-import { ogRender } from "./src/ogRender";
+import { ogRender } from "./src/utils/renderOgImage";
 import { SITE } from "./src/config";
 
 export default defineConfig({
@@ -25,7 +25,7 @@ export default defineConfig({
             name: "Iosevka Etoile Web",
             weight: 600,
             style: "normal",
-            data: fs.readFileSync("public/fonts/IosevkaEtoile/TTF/IosevkaEtoile-SemiBold.ttf"),
+            data: fs.readFileSync("public/fonts/IosevkaEtoile-SemiBold.ttf"),
           },
         ],
       },

@@ -167,13 +167,10 @@ const { activeNav } = Astro.props;
     const menuItems = document.querySelector("#menu-items");
 
     menuBtn?.addEventListener("click", () => {
-      const menuExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+      const menuExpanded = menuBtn.ariaExpanded === "true";
       menuIcon?.classList.toggle("is-active");
-      menuBtn.setAttribute("aria-expanded", menuExpanded ? "false" : "true");
-      menuBtn.setAttribute(
-        "aria-label",
-        menuExpanded ? "open menu" : "close menu"
-      );
+      menuBtn.ariaExpanded = menuExpanded ? "false" : "true";
+      menuBtn.ariaLabel = menuExpanded ? "open menu" : "close menu";
       menuItems?.classList.toggle("display-none");
     });
   }

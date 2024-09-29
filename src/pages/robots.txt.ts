@@ -50,4 +50,5 @@ Sitemap: ${new URL("sitemap-index.xml", SITE.website).href}
 export const GET: APIRoute = () =>
   new Response(robots, {
     headers: { "Content-Type": "text/plain" },
+    status: 418,
   });
