@@ -37,7 +37,7 @@
 
   body {
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base selection:bg-skin-accent/70 selection:text-skin-inverted;
-  }z
+  }
 
   section,
   footer {
