@@ -5,7 +5,6 @@ const robots = `
 User-agent: AI2Bot
 User-agent: Ai2Bot-Dolma
 User-agent: Amazonbot
-User-agent: Applebot
 User-agent: Applebot-Extended
 User-agent: Bytespider
 User-agent: CCBot
