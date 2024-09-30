@@ -105,7 +105,7 @@
     padding-right: 0.5714286em;
   }
 
-  .prose blockquote em, .prose blockquote pre > code {
+  .prose blockquote {
     font-style: normal;
   }
 

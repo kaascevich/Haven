@@ -85,6 +85,6 @@ And here's how you should use it:
 }
 ```
 
-> **‼️ Important:** Don't forget to run `TerminalRawMode.disable()` at some point before your app exits -- if you forget to do this, your user's terminal will be all kinds of messed up.
+> **Important:** Don't forget to run `TerminalRawMode.disable()` at some point before your app exits -- if you forget to do this, your user's terminal will be all kinds of messed up.
 
-> **📝 Note:** If you use this in code that isn't isolated to the main actor, you won't be able to run `disable()` in a `defer` block.
+> **Note:** If you use this in code that isn't isolated to the main actor, you won't be able to run `disable()` in a `defer` block.
