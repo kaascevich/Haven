@@ -41,7 +41,7 @@ export default defineConfig({
       rehypeFigure,
     ],
     shikiConfig: {
-      themes: { light: "catppuccin-latte", dark: "catppuccin-frappe" },
+      themes: { light: "catppuccin-latte", dark: "catppuccin-macchiato" },
       wrap: true,
     },
   },

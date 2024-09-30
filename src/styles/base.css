@@ -17,12 +17,12 @@
 
   :root,
   html[data-theme="dark"] {
-    --color-fill: 48, 52, 70;
-    --color-text-base: 198, 208, 245;
-    --color-accent: 140, 170, 238;
-    --color-card: 98, 104, 128;
-    --color-card-muted: 81, 87, 109;
-    --color-border: 148, 156, 187;
+    --color-fill: 36, 39, 58;
+    --color-text-base: 202, 211, 245;
+    --color-accent: 138, 173, 244;
+    --color-card: 91, 96, 120;
+    --color-card-muted: 73, 77, 100;
+    --color-border: 147, 154, 183;
   }
 
   #sun-svg,

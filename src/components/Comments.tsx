@@ -9,7 +9,7 @@ interface CommentsProps {
 
 export default function Comments({
   lightTheme = "https://giscus.catppuccin.com/themes/latte-no-loader.css",
-  darkTheme = "https://giscus.catppuccin.com/themes/frappe-no-loader.css",
+  darkTheme = "https://giscus.catppuccin.com/themes/macchiato-no-loader.css",
 }: CommentsProps) {
   const [theme, setTheme] = useState(() => {
     const currentTheme = localStorage.getItem("theme");
