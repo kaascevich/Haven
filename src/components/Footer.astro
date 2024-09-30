@@ -1,6 +1,7 @@
 ---
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
+import { SITE } from "@config";
 
 const currentYear = new Date().getFullYear();
 
@@ -16,7 +17,7 @@ const { noMarginTop = false } = Astro.props;
   <div class="footer-wrapper">
     <Socials centered/>
     <div class="copyright-wrapper">
-      Copyright &copy; {currentYear} Kaleb A. Ascevich
+      Copyright &copy; {currentYear} {SITE.author}
     </div>
   </div>
 </footer>

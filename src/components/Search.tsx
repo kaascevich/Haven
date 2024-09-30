@@ -50,8 +50,8 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(function () {
-      inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        searchStr?.length || 0;
+      inputRef.current!.selectionStart =
+        inputRef.current!.selectionEnd = searchStr?.length || 0;
     }, 50);
   }, []);
 
@@ -96,21 +96,18 @@ export default function SearchBar({ searchList }: Props) {
 
       {inputVal.length > 1 && (
         <div className="mt-8">
-          found {searchResults?.length}
-          {searchResults?.length === 1 ? " result" : " results"}{" "}
-          for '{inputVal}'
+          found {searchResults?.length} {searchResults?.length === 1 ? " result" : " results"} for "{inputVal}"
         </div>
       )}
 
       <ul>
-        {searchResults &&
-          searchResults.map(({ item, refIndex }) => (
-            <Card
-              href={`/posts/${item.slug}/`}
-              frontmatter={item.data}
-              key={`${refIndex}-${item.slug}`}
-            />
-          ))}
+        {searchResults?.map(({ item, refIndex }) => (
+          <Card
+            href={`/posts/${item.slug}/`}
+            frontmatter={item.data}
+            key={`${refIndex}-${item.slug}`}
+          />
+        ))}
       </ul>
     </>
   );

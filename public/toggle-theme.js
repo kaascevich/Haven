@@ -14,7 +14,7 @@ function getPreferTheme() {
 let themeValue = getPreferTheme();
 
 function reflectPreference() {
-  document.firstElementChild.setAttribute("data-theme", themeValue);
+  document.firstElementChild?.setAttribute("data-theme", themeValue);
 
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
 

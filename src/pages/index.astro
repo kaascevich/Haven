@@ -47,57 +47,48 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         for more info.
       </p>
       <p></p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">&ldquo;Social&rdquo; links:</div>
-            <Socials/>
-          </div>
-        )
-      }
+      {socialCount > 0 && ( // only display if at least one social link is enabled
+        <div class="social-wrapper">
+          <div class="social-links">&ldquo;Social&rdquo; links:</div>
+          <Socials/>
+        </div>
+      )}
     </section>
 
     <Hr/>
 
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>featured</h2>
-            <ul>
-              {featuredPosts.map(({ data, slug }) => (
-                <Card
-                  href={`/posts/${slug}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          {recentPosts.length > 0 && <Hr/>}
-        </>
-      )
-    }
-
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts">
-          <h2>recent</h2>
+    {featuredPosts.length > 0 && (
+      <>
+        <section id="featured">
+          <h2>featured</h2>
           <ul>
-            {recentPosts.map(({ data, slug }, index) =>
-              index < SITE.postPerIndex && (
-                <Card
-                  href={`/posts/${slug}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-            )}
+            {featuredPosts.map(({ data, slug }) => (
+              <Card
+                href={`/posts/${slug}/`}
+                frontmatter={data}
+                secHeading={false}
+              />
+            ))}
           </ul>
         </section>
-      )
-    }
+        {recentPosts.length > 0 && <Hr/>}
+      </>
+    )}
+
+    {recentPosts.length > 0 && (
+      <section id="recent-posts">
+        <h2>recent</h2>
+        <ul>
+          {recentPosts.map(({ data, slug }, index) => index < SITE.postPerIndex && (
+            <Card
+              href={`/posts/${slug}/`}
+              frontmatter={data}
+              secHeading={false}
+            />
+          ))}
+        </ul>
+      </section>
+    )}
 
     <div class="all-posts-btn-wrapper">
       <LinkButton href="/posts/">
@@ -108,7 +99,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </LinkButton>
     </div>
   </main>
-
   <Footer/>
 </Layout>
 
