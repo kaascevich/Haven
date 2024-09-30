@@ -55,13 +55,10 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        sans: [
-          "Recursive, 'Fafo Nihongo', sans-serif",
-          { fontVariationSettings: "'CASL' 0.25" },
-        ],
+        sans: "Recursive, 'Fafo Nihongo', sans-serif",
         mono: [
           "Recursive, monospace",
-          { fontVariationSettings: "'CASL' 0.25, 'MONO' 1" },
+          { fontVariationSettings: "'MONO' 1" },
         ],
       },
 

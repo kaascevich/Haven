@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Recursive';
-  font-style: italic 0deg 15deg;
   font-weight: 300 1000;
+  font-variation-settings: "CASL" 0.25;
   font-display: swap;
   src: url(/fonts/recursive.woff2) format('woff2');
 }
