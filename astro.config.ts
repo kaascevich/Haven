@@ -7,8 +7,8 @@ import opengraphImages from "astro-opengraph-images";
 import remarkCollapse from "remark-collapse";
 import remarkReadingTime from "./src/utils/plugins/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeFigure from "rehype-figure";
-import rehypeNewTab from "./src/utils/plugins/rehypeNewTab.ts";
 
 import sitemap from "@astrojs/sitemap";
 import renderOgImage from "./src/utils/renderOgImage";
@@ -42,7 +42,7 @@ export default defineConfig({
     ],
     rehypePlugins: [
       rehypeFigure,
-      [rehypeNewTab, { domain: SITE.website }],
+      [rehypeExternalLinks, { target: "_blank" }],
     ],
     shikiConfig: {
       themes: { light: "catppuccin-latte", dark: "catppuccin-macchiato" },
