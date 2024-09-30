@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
+import { SITE } from "@config";
 
 export interface Props {
   href?: string;
@@ -10,17 +11,25 @@ export interface Props {
 const { frontmatter } = Astro.props;
 ---
 
-<li class="my-6">
-  <div class="inline-block text-lg font-medium text-skin-accent">
-    <h2 class="text-lg font-medium">{frontmatter.title}</h2>
+<li>
+  <div class="song-card">
+    <div class="inline-block text-lg font-medium">
+      <h2 class="text-lg font-medium">{frontmatter.title}</h2>
+    </div>
+
+    <p class="opacity-75">{frontmatter.composer || SITE.author}</p>
+
+    <audio
+      class="pt-1"
+      src={frontmatter.source}
+      preload="metadata"
+      controls
+    />
   </div>
-
-  <p>{frontmatter.composer}</p>
-
-  <audio
-    class="pt-1"
-    src={`/assets/songs/${slugifyStr(frontmatter.title)}.mp3`}
-    preload="metadata"
-    controls
-  />
 </li>
+
+<style>
+  .song-card {
+    @apply bg-skin-card-muted rounded-lg p-3;
+  }
+</style>

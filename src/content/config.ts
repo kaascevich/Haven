@@ -1,4 +1,5 @@
 import { defineCollection, z } from "astro:content";
+import { slugifyStr } from "@utils/slugify";
 
 const blog = defineCollection({
   type: "content",
@@ -19,6 +20,7 @@ const songs = defineCollection({
   schema: () => z.object({
     title: z.string(),
     composer: z.string().optional(),
+    source: z.string(),
   }),
 });
 
