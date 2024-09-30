@@ -14,7 +14,7 @@ This is one of a few new wallpapers added in macOS Sequoia, and serves as a semi
 
 I flippin' _adore_ this wallpaper. Like, Sequoia Sunrise is to me what [Bliss] was to everyone who existed at the time -- it's just _perfect_.
 
-This says something, considering that usually I'm the kind of person who avoids (semi-)default wallpapers like ~~COVID-19~~ the plague.
+This says something, considering that usually I'm the kind of person who avoids <nobr>(semi-)default</nobr> wallpapers like ~~COVID-19~~ the plague.
 
 If this wallpaper evokes that feeling in you, too, then you're in luck. Here's how you can get the wallpaper on your device.
 
