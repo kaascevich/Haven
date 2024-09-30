@@ -8,7 +8,7 @@ export const SITE: Site = {
   desc: "my tiny little haven on the internet",
   title: "kaascevich",
   lightAndDarkMode: true,
-  postPerIndex: 4,
+  postPerIndex: 5,
   postPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
