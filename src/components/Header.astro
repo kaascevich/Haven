@@ -149,7 +149,7 @@ const { activeNav } = Astro.props;
     @apply transition-opacity duration-75 ease-in-out;
   }
   .menu-icon .close {
-    opacity: 0;
+    @apply opacity-0;
   }
   .menu-icon.is-active .line {
     @apply opacity-0;

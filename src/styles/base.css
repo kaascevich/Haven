@@ -27,12 +27,12 @@
 
   #sun-svg,
   html[data-theme="dark"] #moon-svg {
-    display: none;
+    @apply hidden;
   }
 
   #moon-svg,
   html[data-theme="dark"] #sun-svg {
-    display: block;
+    @apply block;
   }
 
   body {
@@ -80,7 +80,7 @@
   }
 
   .prose strong {
-    font-weight: 800;
+    @apply font-extrabold;
   }
 
   .prose a {
@@ -93,7 +93,7 @@
 
   .prose th[align="left"], .prose td[align="left"] {
     @apply text-left;
-    padding-left: 0.5714286em;
+    padding-left: calc(4em / 7);
   }
 
   .prose th[align="center"], .prose td[align="center"] {
@@ -102,11 +102,11 @@
 
   .prose th[align="right"], .prose td[align="right"] {
     @apply text-right;
-    padding-right: 0.5714286em;
+    padding-right: calc(4em / 7);
   }
 
   .prose blockquote {
-    font-style: normal;
+    @apply not-italic;
   }
 
   .prose h2#table-of-contents {
@@ -127,7 +127,7 @@
   
   /* ===== scrollbar ===== */
   html {
-    overflow-y: scroll;
+    @apply overflow-y-scroll
   }
 
   /* width */
@@ -152,16 +152,11 @@
 
   /* ===== Code Blocks & Syntax Highlighting ===== */
   pre:has(code) {
-    @apply border border-skin-line;
+    @apply border border-skin-line whitespace-pre;
   }
 
-  code,
-  blockquote {
-    word-wrap: break-word;
-  }
-
-  pre > code {
-    white-space: pre;
+  code, blockquote {
+    @apply break-words;
   }
 
   /* Apply Dark Theme (if multi-theme specified) */
