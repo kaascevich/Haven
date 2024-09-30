@@ -1,5 +1,6 @@
 ---
 pubDatetime: 2024-09-27T20:29:24.000
+modDatetime: 2024-09-30T07:35:05.000
 title: MacBookAir6,1 (part 2)
 tags:
   - linux
@@ -155,17 +156,21 @@ content = {
     compress = "compress-force=zstd";
     noatime = "noatime";
   in {
+    "/" = {
+      mountpoint = "/";
+      mountOptions = [ "subvol=@" compress noatime ];
+    };
     "/nix" = {
       mountpoint = "/nix";
-      mountOptions = [ "subvol=nix" compress noatime ];
+      mountOptions = [ "subvol=@nix" compress noatime ];
     };
     "/persist" = {
       mountpoint = "/persist";
-      mountOptions = [ "subvol=persist" compress noatime ];
+      mountOptions = [ "subvol=@persist" compress noatime ];
     };
     "/config" = {
       mountpoint = "/config";
-      mountOptions = [ "subvol=config" compress noatime ];
+      mountOptions = [ "subvol=@config" compress noatime ];
     };
     "/swap" = {
       mountpoint = "/swap";
@@ -177,14 +182,13 @@ content = {
 
 We set up a `btrfs` filesystem on the LUKS partition and create several subvolumes.
 
+- `/` is the root subvolume, which will be deleted and recreated on every reboot. This will enable us to set up [impermanence](https://github.com/nix-community/impermanence). You can find more details on the particular technique I'll use [here](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html).
 - `/nix` is where the Nix store is, well, stored.
 - `/persist` is where miscellaneous data that should survive a reboot will be kept (such as network configurations and the user's Documents folder).
 - `/config` is a dedicated subvolume for the NixOS configuration, simply to make my life easier.
 - `/swap` is where we keep our swapfile -- 4 gigs in this case, since that's the amount of RAM in my MacBook.
 
-You'll notice that there's no root subvolume. This is intentional -- elsewhere in the config, I define a shell script to run right when `systemd` starts, to delete and recreate the root subvolume on every reboot. This enables us to set up [impermanence](https://github.com/nix-community/impermanence). You can find more details on the particular technique I use [here](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html).
-
-To keep my measly 128 gigs of SSD space relatively clear, we pass `compress-force=zstd` as a mount option for all subvolumes (except for swap).
+To keep my measly 128 gigs of SSD space relatively clear, we pass `compress-force=zstd` as a mount option for all subvolumes (except for swap). We also pass `noatime` to save SSD writes.
 
 ## Boot disk
 
