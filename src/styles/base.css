@@ -1,5 +1,5 @@
-@import "./recursive.css";
-@import "./fafo-nihongo.css";
+@import "./fonts/recursive.css";
+@import "./fonts/fafo-nihongo.css";
 
 @tailwind base;
 @tailwind components;
