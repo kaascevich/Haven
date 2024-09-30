@@ -3,10 +3,13 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import opengraphImages from "astro-opengraph-images";
+
 import remarkCollapse from "remark-collapse";
-import remarkReadingTime from "./src/utils/remarkReadingTime.mjs";
+import remarkReadingTime from "./src/utils/plugins/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
 import rehypeFigure from "rehype-figure";
+import rehypeNewTab from "./src/utils/plugins/rehypeNewTab.ts";
+
 import sitemap from "@astrojs/sitemap";
 import renderOgImage from "./src/utils/renderOgImage";
 import { SITE } from "./src/config";
@@ -39,6 +42,7 @@ export default defineConfig({
     ],
     rehypePlugins: [
       rehypeFigure,
+      [rehypeNewTab, { domain: SITE.website }],
     ],
     shikiConfig: {
       themes: { light: "catppuccin-latte", dark: "catppuccin-macchiato" },
