@@ -18,13 +18,11 @@ const { page } = Astro.props;
 
 <Layout title={`posts | ${SITE.title}`}>
   <Header activeNav="posts"/>
-  <Main pageTitle="posts" pageDesc="all the blog posts i've let loose on the world">
+  <Main pageTitle="posts" pageDesc="all the blog posts I've let loose on the world">
     <ul>
-      {
-        page.data.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data}/>
-        ))
-      }
+      {page.data.map(({ data, slug }) => (
+        <Card href={`/posts/${slug}/`} frontmatter={data}/>
+      ))}
     </ul>
   </Main>
 
