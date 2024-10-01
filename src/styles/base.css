@@ -58,7 +58,6 @@
 
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base;
-    @apply prose-h3:italic;
     @apply prose-p:!text-skin-base;
     @apply prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-4 hover:prose-a:text-skin-accent;
     @apply prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80;
