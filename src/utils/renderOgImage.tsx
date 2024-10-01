@@ -1,7 +1,9 @@
 import { SITE } from "../config";
 import type { RenderFunctionInput } from "astro-opengraph-images";
 
-export default async function renderOgImage({ title, description }: RenderFunctionInput): Promise<React.ReactNode> {
+export default async function renderOgImage(
+  { title, description }: RenderFunctionInput
+): Promise<React.ReactNode> {
   let articleTitle = title.replace(` | ${SITE.title}`, "");
 
   return Promise.resolve(
