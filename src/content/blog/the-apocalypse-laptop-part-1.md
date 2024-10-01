@@ -7,7 +7,7 @@ tags:
 description: I might have just found an actual use for that MacBook
 ---
 
-> FYI: I'm putting the NixOS project on hold. I don't know how long. Possibly indefinitely. We'll see.
+> FYI: I'm putting the NixOS project on hold. I don't know for how long. Possibly indefinitely. We'll see.
 
 If you live in the US (like me), you probably know that the results of the upcoming presedential election (as well as other factors, presumably) will likely make or break this country -- and right now, it seems to me that both candidates will break instead of make. With tensions all over this godforsaken planet that I won't delve into because I'm not even remotely qualified for it, [r/prepping] is seeming like a place more and more people will discover in the coming years/months/weeks/days/attoseconds.
 
