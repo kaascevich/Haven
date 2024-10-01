@@ -46,7 +46,6 @@ export default defineConfig({
     ],
     shikiConfig: {
       themes: { light: "catppuccin-latte", dark: "catppuccin-macchiato" },
-      wrap: true,
     },
   },
   vite: {
