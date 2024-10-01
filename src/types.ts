@@ -6,7 +6,6 @@ export type Site = {
   profile: string;
   desc: string;
   title: string;
-  lightAndDarkMode: boolean;
   postPerIndex: number;
   postPerPage: number;
   scheduledPostMargin: number;
