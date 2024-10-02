@@ -59,7 +59,7 @@
   .prose {
     @apply prose-headings:!mb-3 prose-headings:!text-skin-base;
     @apply prose-p:!text-skin-base;
-    @apply prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-4 hover:prose-a:text-skin-accent;
+    @apply prose-a:!text-skin-base prose-a:!decoration-wavy prose-a:underline-offset-4 hover:prose-a:text-skin-accent;
     @apply prose-blockquote:!border-l-skin-accent/50 prose-blockquote:opacity-80;
     @apply prose-figcaption:!text-skin-base prose-figcaption:opacity-70;
     @apply prose-strong:!text-skin-base;
@@ -87,7 +87,11 @@
   }
 
   .prose a[data-footnote-ref] {
-    @apply underline-offset-2;
+    @apply underline-offset-1;
+  }
+
+  .prose a[data-footnote-backref] {
+    @apply !text-skin-accent no-underline;
   }
 
   .prose th[align="left"], .prose td[align="left"] {

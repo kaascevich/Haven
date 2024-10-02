@@ -43,7 +43,7 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li><a href="/posts/" class={activeNav === "posts" ? "active" : ""}>posts</a></li>
-          <li><a href="/tags/" class={activeNav === "tags" ? "active" : ""}>tags</a></li>
+          <li><a href="/tags/"  class={activeNav === "tags"  ? "active" : ""}>tags </a></li>
           <li><a href="/songs/" class={activeNav === "songs" ? "active" : ""}>songs</a></li>
           <li><a href="/about/" class={activeNav === "about" ? "active" : ""}>about</a></li>
           <li>
@@ -112,7 +112,8 @@ const { activeNav } = Astro.props;
     @apply col-span-2 flex items-center justify-center;
   }
   nav ul li a {
-    @apply w-full px-4 py-3 text-center font-medium hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    @apply w-full px-4 py-3 text-center hover:text-skin-accent sm:my-0 sm:px-2 sm:py-1;
+    font-weight: 450;
   }
   nav ul li:nth-last-child(2) a {
     @apply w-auto;
@@ -122,7 +123,7 @@ const { activeNav } = Astro.props;
     @apply col-span-1;
   }
   nav a.active {
-    @apply underline decoration-wavy decoration-2 underline-offset-4;
+    @apply font-extrabold;
   }
   nav a.active svg {
     @apply fill-skin-accent;

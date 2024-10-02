@@ -14,14 +14,14 @@ const { title, pubDatetime, modDatetime, description } = frontmatter;
 
 const headerProps = {
   style: { viewTransitionName: slugifyStr(title) },
-  className: "text-lg font-medium decoration-dashed hover:underline",
+  className: "text-lg font-medium decoration-wavy hover:underline",
 };
 ---
 
 <li class="my-6">
   <a
     href={href}
-    class="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+    class="inline-block text-lg font-medium text-skin-accent decoration-wavy underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
   >{
     secHeading
       ? (<h2 {...headerProps}>{title}</h2>)
