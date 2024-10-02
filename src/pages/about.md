@@ -13,6 +13,7 @@ Here's some basic information about me:
 
 ```swift
 import Foundation
+import PersonDescription
 
 struct Me: Person {
   let name = Name("Kaleb A. Ascevich", pronunciation: "KAY-lub AICE-uh-vitch")
@@ -23,18 +24,32 @@ struct Me: Person {
   ).date!
   let address = Address(state: .florida, country: .usa)
 
-  var devices: [_: (any Device, OS)] = [
-    "Kaleb's MacBook": (Mac(.macbookAir, 10, 1), .macOS),
-    "macbookair61": (Mac(.macbookAir, 6, 1), .linux(distro: "NixOS")),
-    "zenbook": (PC(.laptop, "ASUS"), .windows),
-    "imacg4": (Mac(.powerMac, 4, 2), [.macOS, .macOS]),
-  ]
-  var langs: [Lang] = [.swift, .rust]
+  var langs: [Lang] = [.swift, .rust, .nix]
   let shell = Shell.nushell
 
   var apps: [_: [App]] = [
     "ide": ["Xcode", "VSCodium"],
     "term": ["iTerm2"],
+    "music": ["Apple Music"],
+    "browser": ["Safari"],
+  ]
+  var devices: [_: (any Device, [OS])] = [
+    "Kaleb's MacBook": (
+      Mac(.macbookAir, 10, 1),
+      [.macOS]
+    ),
+    "macbookair61": (
+      Mac(.macbookAir, 6, 1),
+      [.linux(distro: "Debian")]
+    ),
+    "zenbook": (
+      PC(.laptop, "ASUS"),
+      [.windows]
+    ),
+    "imacg4": (
+      Mac(.powerMac, 4, 2),
+      [.macOS, .macOS]
+    ),
   ]
 }
 
@@ -46,8 +61,6 @@ extension Me {
   }
 }
 ```
-
-> Oh, and in case anyone was curious, [JavaScript is bad](http://destroyallsoftware.com/talks/wat). Especially from the perspective of a Swift developer (or, well, any developer who uses a language that's even _remotely_ type-safe).
 
 [Swift]: https://swift.org
 [Rust]: https://rust-lang.org
