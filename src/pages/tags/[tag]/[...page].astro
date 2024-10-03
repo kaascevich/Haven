@@ -16,13 +16,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     return paginate(tagPosts, {
       params: { tag },
       props: { tagName },
-      pageSize: SITE.postPerPage,
+      pageSize: SITE.postsPerPage,
     });
   });
 }
 
-const params = Astro.params;
-const { tag } = params;
+const { tag } = Astro.params;
 const { page, tagName } = Astro.props;
 ---
 

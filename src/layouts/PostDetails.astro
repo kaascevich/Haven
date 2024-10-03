@@ -53,7 +53,7 @@ const layoutProps = {
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
       class="focus-outline mb-2 mt-8 flex hover:opacity-75"
-      onclick="(() => (history.length === 1) ? window.location = '/' : history.back())()"
+      onclick="history.length === 1 ? location = '/' : history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg">
         <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
@@ -77,7 +77,7 @@ const layoutProps = {
     </article>
 
     <ul class="my-8">
-      {tags.map((tag: string) => <Tag tag={slugifyStr(tag)}/>)}
+      {tags.map(tag => <Tag tag={slugifyStr(tag)}/>)}
     </ul>
 
     <div class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4">
@@ -106,8 +106,8 @@ const layoutProps = {
 <CodeBlockExtras/>
 
 <script is:inline data-astro-rerun>
-  /* Go to page start after page swap */
+  /* go to page start after page swap */
   document.addEventListener("astro:after-swap", () =>
-    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+    scrollTo({ left: 0, top: 0, behavior: "instant" })
   );
 </script>

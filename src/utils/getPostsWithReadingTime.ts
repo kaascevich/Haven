@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { slugifyStr } from "./slugify";
+import { slugifyStr } from "@utils/slugify";
 
 interface Frontmatter {
   frontmatter: {

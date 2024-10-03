@@ -7,8 +7,8 @@ export const SITE: Site = {
   profile: "https://kaascevich.github.io/",
   desc: "my tiny little haven on the internet",
   title: "kaascevich",
-  postPerIndex: 5,
-  postPerPage: 5,
+  postsPerIndex: 5,
+  postsPerPage: 5,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 

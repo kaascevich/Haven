@@ -16,10 +16,10 @@ const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
 const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
 ---
 
-{ (prevPost || nextPost) && (<hr class="my-6 border-skin-line"/>) }
+{ (prevPost || nextPost) && <hr class="my-6 border-skin-line"/> }
 
 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-  {prevPost && (
+  {prevPost &&
     <a
       href={`/posts/${prevPost.slug}`}
       class="post-link"
@@ -44,8 +44,8 @@ const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostInde
         <div class="post-title">{prevPost.title}</div>
       </div>
     </a>
-  )}
-  {nextPost && (
+  }
+  {nextPost &&
     <a
       href={`/posts/${nextPost.slug}`}
       class="post-link justify-end text-right sm:col-start-2"
@@ -70,7 +70,7 @@ const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostInde
         <path d="M9 6l6 6l-6 6"/>
       </svg>
     </a>
-  )}
+  }
 </div>
 
 <style>

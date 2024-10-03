@@ -6,7 +6,7 @@ function getPreferTheme() {
   if (currentTheme) return currentTheme;
 
   // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
+  return matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
@@ -24,7 +24,7 @@ function reflectPreference() {
   // Check if the body element exists before using getComputedStyle
   if (body) {
     // Get the computed styles for the body element
-    const computedStyles = window.getComputedStyle(body);
+    const computedStyles = getComputedStyle(body);
 
     // Get the background color property
     const bgColor = computedStyles.backgroundColor;
@@ -42,7 +42,7 @@ function setPreference() {
   reflectPreference();
 }
 
-window.onload = () => {
+onload = () => {
   function setThemeFeature() {
     // set on load so screen readers can get the latest value on the button
     reflectPreference();
@@ -55,14 +55,11 @@ window.onload = () => {
   }
 
   setThemeFeature();
-
-  // Runs on view transitions navigation
   document.addEventListener("astro:after-swap", setThemeFeature);
 };
 
 // sync with system changes
-window
-  .matchMedia("(prefers-color-scheme: dark)")
+matchMedia("(prefers-color-scheme: dark)")
   .addEventListener("change", ({ matches: isDark }) => {
     themeValue = isDark ? "dark" : "light";
     setPreference();

@@ -8,32 +8,27 @@ const shareLinks = [
   {
     name: "WhatsApp",
     href: "https://wa.me/?text=",
-    linkTitle: `share this post via WhatsApp`,
+    linkTitle: "share this post via WhatsApp",
   },
   {
     name: "Telegram",
     href: "https://t.me/share/url?url=",
-    linkTitle: `share this post via Telegram`,
-  },
-  {
-    name: "Mastodon",
-    href: "https://mastodonshare.com/?url=",
-    linkTitle: `share this post via Mastodon`,
+    linkTitle: "share this post via Telegram",
   },
   {
     name: "Pinterest",
     href: "https://pinterest.com/pin/create/button/?url=",
-    linkTitle: `share this post on Pinterest`,
+    linkTitle: "share this post on Pinterest",
   },
   {
     name: "Reddit",
     href: "https://www.reddit.com/submit?title=Check%20out%20this%20post%21&url=",
-    linkTitle: `share this post on Reddit`,
+    linkTitle: "share this post on Reddit",
   },
   {
     name: "Mail",
     href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `share this post via email`,
+    linkTitle: "share this post via email",
   },
 ] as const;
 ---
@@ -41,7 +36,7 @@ const shareLinks = [
 <div class="social-icons">
   <span class="italic">share this post on:</span>
   <div class="text-center">
-    {shareLinks.map(social => (
+    {shareLinks.map(social =>
       <LinkButton
         href={`${social.href + URL}`}
         className="link-button"
@@ -50,7 +45,7 @@ const shareLinks = [
         <Fragment set:html={socialIcons[social.name]}/>
         <span class="sr-only">{social.linkTitle}</span>
       </LinkButton>
-    ))}
+    )}
   </div>
 </div>
 

@@ -22,9 +22,9 @@ const pageDesc = "all the blog posts I've let loose on the world";
   <Header activeNav="posts"/>
   <Main pageTitle="posts" pageDesc={pageDesc}>
     <ul>
-      {page.data.map(({ data, slug }) => (
+      {page.data.map(({ data, slug }) =>
         <Card href={`/posts/${slug}/`} frontmatter={data}/>
-      ))}
+      )}
     </ul>
   </Main>
 

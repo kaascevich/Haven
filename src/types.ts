@@ -6,8 +6,8 @@ export type Site = {
   profile: string;
   desc: string;
   title: string;
-  postPerIndex: number;
-  postPerPage: number;
+  postsPerIndex: number;
+  postsPerPage: number;
   scheduledPostMargin: number;
 };
 

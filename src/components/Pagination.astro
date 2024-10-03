@@ -11,7 +11,7 @@ const { page } = Astro.props;
 ---
 
 {
-  page.lastPage > 1 && (
+  page.lastPage > 1 &&
     <nav class="pagination-wrapper" aria-label="Pagination">
       <LinkButton
         disabled={!page.url.prev}
@@ -37,7 +37,6 @@ const { page } = Astro.props;
         </svg>
       </LinkButton>
     </nav>
-  )
 }
 
 <style>
