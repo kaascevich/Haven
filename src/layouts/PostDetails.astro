@@ -61,6 +61,7 @@ const layoutProps = {
       <span>go back</span>
     </button>
   </div>
+
   <main id="main-content">
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
     <Datetime
@@ -70,6 +71,7 @@ const layoutProps = {
       className="my-2"
     />
     <span class="flex items-center space-x-2 opacity-80 italic">{readingTime}</span>
+    
     <article id="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content/>
     </article>
@@ -86,6 +88,7 @@ const layoutProps = {
     <PostLinks post={post} posts={posts}/>
     <Comments client:only="react"/>
   </main>
+
   <Footer/>
 </Layout>
 
