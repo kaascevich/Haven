@@ -14,11 +14,13 @@ export interface Props {
 }
 
 const { page } = Astro.props;
+
+const pageDesc = "all the blog posts I've let loose on the world";
 ---
 
-<Layout title={`posts | ${SITE.title}`}>
+<Layout title={`posts | ${SITE.title}`} description={pageDesc}>
   <Header activeNav="posts"/>
-  <Main pageTitle="posts" pageDesc="all the blog posts I've let loose on the world">
+  <Main pageTitle="posts" pageDesc={pageDesc}>
     <ul>
       {page.data.map(({ data, slug }) => (
         <Card href={`/posts/${slug}/`} frontmatter={data}/>

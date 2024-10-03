@@ -15,11 +15,13 @@ const { songs } = Astro.props;
 
 const originals = songs.filter(song => !song.data.composer)
 const remixes = songs.filter(song => song.data.composer)
+
+const pageDesc = "all the songs I've created or remixed";
 ---
 
-<Layout title={`songs | ${SITE.title}`}>
+<Layout title={`songs | ${SITE.title}`} description={pageDesc}>
   <Header activeNav="songs"/>
-  <Main pageTitle="songs" pageDesc="all the songs I've created or remixed">
+  <Main pageTitle="songs" pageDesc={pageDesc}>
     <section id="originals">
       <h2>originals</h2>
       <ul class="song-list">

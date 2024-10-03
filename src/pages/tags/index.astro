@@ -11,11 +11,13 @@ import { SITE } from "@config";
 const posts = await getCollection("blog");
 
 const tags = getUniqueTags(posts);
+
+const pageDesc = `all the tags I've used in my posts (${tags.length} total)`;
 ---
 
-<Layout title={`tags | ${SITE.title}`}>
+<Layout title={`tags | ${SITE.title}`} description={pageDesc}>
   <Header activeNav="tags"/>
-  <Main pageTitle="tags" pageDesc=`all the tags I've used in my posts (${tags.length} total)`>
+  <Main pageTitle="tags" pageDesc={pageDesc}>
     <ul>
       {tags.map(({ tag }) => <Tag {tag} size="lg"/>)}
     </ul>
