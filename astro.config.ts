@@ -34,7 +34,13 @@ export default defineConfig({
       },
       render: renderOgImage,
     }),
-    compress(),
+    compress({
+      HTML: {
+        "html-minifier-terser": {
+          conservativeCollapse: true,
+        },
+      },
+    }),
   ],
   markdown: {
     remarkPlugins: [

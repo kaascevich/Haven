@@ -28,7 +28,7 @@ breadcrumbList[0] === "tags" &&
   <ul>
     <li>
       <a href="/">home</a>
-      <span aria-hidden="true">&gt;&gt;</span>
+      <span aria-hidden="true">&rarr;</span>
     </li>
     {
       breadcrumbList.map((breadcrumb, index) =>
@@ -41,7 +41,7 @@ breadcrumbList[0] === "tags" &&
         ) : (
           <li>
             <a href={`/${breadcrumb}/`}>{breadcrumb}</a>
-            <span aria-hidden="true">&gt;&gt;</span>
+            <span aria-hidden="true">&rarr;</span>
           </li>
         )
       )
