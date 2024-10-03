@@ -40,13 +40,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </a>
 
       <p>
-        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online. Take a gander at
-        <LinkButton href="about" className="underline decoration-wavy underline-offset-4">
-          my about page
-        </LinkButton>
-        for more info.
+        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online.
+        Take a gander at <a href="about">my about page</a> for more info.
       </p>
-      <p></p>
       {socialCount > 0 && ( // only display if at least one social link is enabled
         <div class="social-wrapper">
           <div class="social-links">&ldquo;Social&rdquo; links:</div>
@@ -118,6 +114,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
   #hero p {
     @apply my-2;
+  }
+  #hero p a {
+    @apply underline decoration-wavy underline-offset-4 hover:text-skin-accent;
   }
   .social-wrapper {
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;

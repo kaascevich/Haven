@@ -1,0 +1,52 @@
+<script is:inline data-astro-rerun>
+   function attachCodeBlockExtras() {
+    const copyButtonLabel = "copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const languageName = codeBlock.getAttribute("data-language") || "";
+
+      if (languageName !== "console") {
+        const copyButton = document.createElement("button");
+        copyButton.className =
+          "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium hover:bg-skin-card-muted";
+        copyButton.innerHTML = copyButtonLabel;
+        codeBlock.setAttribute("tabindex", "0");
+        codeBlock.appendChild(copyButton);
+        
+        copyButton.addEventListener("click", async () => await copyCode(codeBlock, copyButton));
+      }
+
+      const languageLabel = document.createElement("div");
+      languageLabel.className =
+        "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium bg-skin-fill";
+      languageLabel.innerHTML = languageName;
+
+      // hide the language name in reader view
+      languageLabel.hidden = true;
+      languageLabel.style.display = "inline";
+      
+      codeBlock.appendChild(languageLabel);
+
+      // wrap codebock with relative parent element
+      codeBlock.parentNode?.insertBefore(wrapper, codeBlock);
+      wrapper.appendChild(codeBlock);
+    }
+
+    async function copyCode(block, button) {
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+
+      await navigator.clipboard.writeText(text ?? "");
+
+      // visual feedback that task is completed
+      button.innerText = "copied";
+
+      setTimeout(() => button.innerText = copyButtonLabel, 800);
+    }
+  }
+  attachCodeBlockExtras();
+</script>

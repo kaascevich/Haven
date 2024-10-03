@@ -1,0 +1,33 @@
+<script is:inline data-astro-rerun>
+  function createProgressBar() {
+    // create the main container div
+    const progressContainer = document.createElement("div");
+    progressContainer.className = "progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill";
+
+    // create the progress bar div
+    const progressBar = document.createElement("div");
+    progressBar.className = "progress-bar h-1 w-0 bg-skin-accent";
+    progressBar.id = "progress-bar";
+
+    progressContainer.appendChild(progressBar);
+    document.body.appendChild(progressContainer);
+  }
+  createProgressBar();
+
+  function updateScrollProgress() {
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+
+      const progressBar = document?.getElementById("progress-bar");
+      if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+      }
+    });
+  }
+  updateScrollProgress();
+</script>

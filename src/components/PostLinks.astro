@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+  posts: CollectionEntry<"blog">[];
+}
+
+const { post, posts } = Astro.props;
+
+const allPosts = posts.map(({ data: { title }, slug }) => ({ slug, title }));
+
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.slug);
+
+const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+---
+
+{ (prevPost || nextPost) && (<hr class="my-6 border-skin-line"/>) }
+
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+  {prevPost && (
+    <a
+      href={`/posts/${prevPost.slug}`}
+      class="post-link"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M15 6l-6 6l6 6"/>
+      </svg>
+      <div>
+        <span>previous post</span>
+        <div class="post-title">{prevPost.title}</div>
+      </div>
+    </a>
+  )}
+  {nextPost && (
+    <a
+      href={`/posts/${nextPost.slug}`}
+      class="post-link justify-end text-right sm:col-start-2"
+    >
+      <div>
+        <span>next post</span>
+        <div class="post-title">{nextPost.title}</div>
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M9 6l6 6l-6 6"/>
+      </svg>
+    </a>
+  )}
+</div>
+
+<style>
+  .post-link {
+    @apply flex w-full gap-1 hover:opacity-75;
+  }
+  .post-title {
+    @apply text-sm text-skin-accent/85;
+  }
+</style>

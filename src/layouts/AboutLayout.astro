@@ -5,6 +5,9 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
 
+import ScrollProgress from "@components/scripts/ScrollProgress.astro";
+import CodeBlockExtras from "@components/scripts/CodeBlockExtras.astro";
+
 export interface Props {
   frontmatter: {
     title: string;
@@ -26,3 +29,6 @@ const { frontmatter } = Astro.props;
   </main>
   <Footer/>
 </Layout>
+
+<ScrollProgress/>
+<CodeBlockExtras/>
