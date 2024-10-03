@@ -247,7 +247,7 @@ const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostInde
       const wrapper = document.createElement("div");
       wrapper.style.position = "relative";
 
-      let languageName = codeBlock.getAttribute("data-language") || "";
+      const languageName = codeBlock.getAttribute("data-language") || "";
 
       if (languageName !== "console") {
         const copyButton = document.createElement("button");
