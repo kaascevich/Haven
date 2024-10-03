@@ -1,4 +1,4 @@
-import { SITE } from "@config";
+import { SITE } from "../config";
 import type { RenderFunctionInput } from "astro-opengraph-images";
 
 export default async function renderOgImage(
