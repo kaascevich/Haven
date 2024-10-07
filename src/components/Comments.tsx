@@ -3,8 +3,8 @@ import { GISCUS } from "@config";
 import { useEffect, useState } from "react";
 
 interface CommentsProps {
-  lightTheme?: Theme;
-  darkTheme?: Theme;
+  lightTheme?: Theme,
+  darkTheme?: Theme,
 }
 
 export default function Comments({

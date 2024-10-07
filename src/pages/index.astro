@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
@@ -15,13 +13,10 @@ const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(post => post.data.featured);
 const nonFeaturedPosts = sortedPosts.filter(post => !post.data.featured);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
-  <Header/>
-  <main id="main-content">
+  <main>
     <section id="hero">
       <h1>いらっしゃいませ</h1>
       <a
@@ -46,12 +41,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       <p>
         If you want a look under the hood, you can find this site&rsquo;s source code <a href="https://github.com/kaascevich/kaascevich.github.io">here</a> &mdash; I based it off of <a href="https://astro-paper.pages.dev">AstroPaper</a>, and used <a href="https://catppuccin.com">Catppuccin</a> for the colors.
       </p>
-      {socialCount > 0 && ( // only display if at least one social link is enabled
+      {SOCIALS.length > 0 &&
         <div class="social-wrapper">
           <div class="social-links">&ldquo;Social&rdquo; links:</div>
           <Socials/>
         </div>
-      )}
+      }
     </section>
 
     <Hr/>
@@ -96,7 +91,6 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </LinkButton>
     </div>
   </main>
-  <Footer/>
 </Layout>
 
 <style>

@@ -1,8 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import Pagination from "@components/Pagination.astro";
 import Card from "@components/Card";
 import { SITE } from "@config";
@@ -10,17 +8,16 @@ import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  page: Page<CollectionEntry<"blog">>;
+  page: Page<CollectionEntry<"blog">>,
 }
 
 const { page } = Astro.props;
 
-const pageDesc = "all the blog posts I've let loose on the world";
+const description = "all the blog posts I've let loose on the world";
 ---
 
-<Layout title={`posts | ${SITE.title}`} description={pageDesc}>
-  <Header activeNav="posts"/>
-  <Main pageTitle="posts" pageDesc={pageDesc}>
+<Layout title={`posts | ${SITE.title}`} {description} activeNav="posts">
+  <Main title="posts" {description}>
     <ul>
       {page.data.map(({ data, slug }) =>
         <Card href={`/posts/${slug}/`} frontmatter={data}/>
@@ -29,6 +26,4 @@ const pageDesc = "all the blog posts I've let loose on the world";
   </Main>
 
   <Pagination {page}/>
-
-  <Footer noMarginTop={page.lastPage > 1}/>
 </Layout>

@@ -4,15 +4,9 @@ import Socials from "@components/Socials.astro";
 import { SITE } from "@config";
 
 const currentYear = new Date().getFullYear();
-
-export interface Props {
-  noMarginTop?: boolean;
-}
-
-const { noMarginTop = false } = Astro.props;
 ---
 
-<footer class={`${noMarginTop ? "" : "mt-auto"}`}>
+<footer class="mt-auto">
   <Hr noPadding/>
   <div class="footer-wrapper">
     <Socials centered/>

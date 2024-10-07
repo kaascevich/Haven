@@ -1,7 +1,5 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Comments from "@components/Comments";
 import Datetime from "@components/Datetime";
@@ -17,8 +15,8 @@ import HeadingLinks from "@components/scripts/HeadingLinks.astro";
 import CodeBlockExtras from "@components/scripts/CodeBlockExtras.astro";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
-  posts: CollectionEntry<"blog">[];
+  post: CollectionEntry<"blog">,
+  posts: CollectionEntry<"blog">[],
 }
 
 const { post, posts } = Astro.props;
@@ -27,9 +25,8 @@ const {
   title,
   description,
   readingTime,
-  canonicalURL,
-  pubDatetime,
-  modDatetime,
+  published,
+  modified,
   tags,
 } = post.data;
 
@@ -40,16 +37,13 @@ const layoutProps = {
   ogTitle: title,
   description,
   readingTime,
-  pubDatetime,
-  modDatetime,
-  canonicalURL,
+  published,
+  modified,
   scrollSmooth: true,
 };
 ---
 
 <Layout {...layoutProps}>
-  <Header/>
-
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
       class="focus-outline mb-2 mt-8 flex hover:opacity-75"
@@ -62,11 +56,11 @@ const layoutProps = {
     </button>
   </div>
 
-  <main id="main-content">
+  <main>
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
     <Datetime
-      pubDatetime={pubDatetime}
-      modDatetime={modDatetime}
+      {published}
+      {modified}
       size="lg"
       className="my-2"
     />
@@ -85,11 +79,9 @@ const layoutProps = {
       <ShareLinks/>
     </div>
 
-    <PostLinks post={post} posts={posts}/>
+    <PostLinks {post} {posts}/>
     <Comments client:only="react"/>
   </main>
-
-  <Footer/>
 </Layout>
 
 <style>

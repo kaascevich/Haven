@@ -1,8 +1,6 @@
 ---
 import { SITE } from "@config";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
 import Layout from "@layouts/Layout.astro";
 
 import ScrollProgress from "@components/scripts/ScrollProgress.astro";
@@ -10,24 +8,22 @@ import CodeBlockExtras from "@components/scripts/CodeBlockExtras.astro";
 
 export interface Props {
   frontmatter: {
-    title: string;
-    description?: string;
-  };
+    title: string,
+    description?: string,
+  },
 }
 
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={`${frontmatter.title} | ${SITE.title}`}>
-  <Header activeNav="about"/>
+<Layout title={`${frontmatter.title} | ${SITE.title}`} activeNav="about">
   <Breadcrumbs/>
-  <main id="main-content">
+  <main>
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       <slot/>
     </section>
   </main>
-  <Footer/>
 </Layout>
 
 <ScrollProgress/>

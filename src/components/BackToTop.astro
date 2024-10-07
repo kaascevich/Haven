@@ -9,11 +9,8 @@
 </button>
 
 <script is:inline data-astro-rerun>
-  function backToTop() {
-    document.querySelector("#back-to-top")?.addEventListener("click", () => {
-      document.body.scrollTop = 0; // for Safari
-      document.documentElement.scrollTop = 0; // for Chrome, Firefox, and Opera
-    });
-  }
-  backToTop();
+  document.querySelector("#back-to-top")?.addEventListener("click", () => {
+    document.body.scrollTop = 0; // for Safari
+    document.documentElement.scrollTop = 0; // for Chrome, Firefox, and Opera
+  });
 </script>

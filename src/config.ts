@@ -4,7 +4,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https://kaascevich.github.io/",
   author: "Kaleb A. Ascevich",
-  profile: "https://kaascevich.github.io/",
+  profile: "https://kaascevich.github.io/about",
   desc: "my tiny little haven on the internet",
   title: "kaascevich",
   postsPerIndex: 5,
@@ -15,32 +15,28 @@ export const SITE: Site = {
 export const LOCALE = {
   lang: "en",
   langTag: ["en-US"],
-} as const;
+};
 
 export const SOCIALS: SocialObjects = [
   {
     name: "GitHub",
     href: "https://github.com/kaascevich",
     linkTitle: `${SITE.title} on GitHub`,
-    active: true,
   },
   {
     name: "Mail",
     href: "mailto:cloths-fringe0s@icloud.com",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: true,
   },
   {
     name: "Discord",
     href: "https://discord.com/users/1181742723917688882",
     linkTitle: `${SITE.title} on Discord`,
-    active: true,
   },
   {
     name: "Steam",
     href: "https://steamcommunity.com/id/macOSisthebestOS/",
     linkTitle: `${SITE.title} on Steam`,
-    active: true,
   },
 ];
 
@@ -55,4 +51,4 @@ export const GISCUS: GiscusProps = {
   emitMetadata: "0",
   inputPosition: "top",
   lang: "en",
-}
+};

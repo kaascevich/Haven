@@ -5,7 +5,7 @@ import getSortedPosts from "@utils/getSortedPosts";
 import getPostsWithReadingTime from "@utils/getPostsWithReadingTime";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">,
 }
 
 export async function getStaticPaths() {
@@ -26,4 +26,4 @@ const posts = await getCollection("blog");
 const sortedPosts = getSortedPosts(posts);
 ---
 
-<PostDetails post={post} posts={sortedPosts}/>
+<PostDetails {post} posts={sortedPosts}/>

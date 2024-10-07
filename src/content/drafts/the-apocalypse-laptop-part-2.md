@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-10-05T08:09:20.000
+published: 2024-10-05T08:09:20.000
 title: The apocalypse laptop (part 2)
 tags:
   - mac

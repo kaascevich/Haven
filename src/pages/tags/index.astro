@@ -1,7 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Tag from "@components/Tag.astro";
@@ -9,18 +7,13 @@ import getUniqueTags from "@utils/getUniqueTags";
 import { SITE } from "@config";
 
 const posts = await getCollection("blog");
-
 const tags = getUniqueTags(posts);
 
-const pageDesc = `all the tags I've used in my posts (${tags.length} total)`;
+const description = `all the tags I've used in my posts (${tags.length} total)`;
 ---
 
-<Layout title={`tags | ${SITE.title}`} description={pageDesc}>
-  <Header activeNav="tags"/>
-  <Main pageTitle="tags" pageDesc={pageDesc}>
-    <ul>
-      {tags.map(({ tag }) => <Tag {tag} size="lg"/>)}
-    </ul>
+<Layout title={`tags | ${SITE.title}`} {description} activeNav="tags">
+  <Main title="tags" {description}>
+    <ul>{tags.map(({ tag }) => <Tag {tag} size="lg"/>)}</ul>
   </Main>
-  <Footer/>
 </Layout>

@@ -1,6 +1,6 @@
 ---
-pubDatetime: 2024-09-24T12:39:37.000
-modDatetime: 2024-09-24T15:27:46.000
+published: 2024-09-24T12:39:37.000
+modified: 2024-09-24T15:27:46.000
 title: Why I have a Mac
 tags:
   - mac

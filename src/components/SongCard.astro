@@ -3,8 +3,8 @@ import type { CollectionEntry } from "astro:content";
 import { SITE } from "@config";
 
 export interface Props {
-  href?: string;
-  frontmatter: CollectionEntry<"songs">["data"];
+  href?: string,
+  frontmatter: CollectionEntry<"songs">["data"],
 }
 
 const { frontmatter } = Astro.props;

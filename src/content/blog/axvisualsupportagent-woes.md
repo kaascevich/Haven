@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-09-25T11:19:13.000
+published: 2024-09-25T11:19:13.000
 title: AXVisualSupportAgent woes
 tags:
   - macos

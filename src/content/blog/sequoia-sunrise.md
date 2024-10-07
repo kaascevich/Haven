@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-09-24T13:58:30.000
+published: 2024-09-24T13:58:30.000
 title: Sequoia Sunrise
 tags:
   - macos

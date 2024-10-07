@@ -1,14 +1,10 @@
 ---
 import { SITE } from "@config";
 import Layout from "@layouts/Layout.astro";
-import Header from "@components/Header.astro";
-import Footer from "@components/Footer.astro";
 ---
 
 <Layout title={`404 | ${SITE.title}`} description="page not found">
-  <Header/>
-
-  <main id="main-content">
+  <main>
     <div class="not-found-wrapper">
       <h1>404</h1>
       <span>we all know what this means&hellip;</span>
@@ -24,12 +20,10 @@ import Footer from "@components/Footer.astro";
       </button>
     </div>
   </main>
-
-  <Footer/>
 </Layout>
 
 <style>
-  #main-content {
+  main {
     @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
   }
   .not-found-wrapper {

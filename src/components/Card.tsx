@@ -3,13 +3,13 @@ import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
-  href?: string;
-  frontmatter: CollectionEntry<"blog">["data"];
-  secHeading?: boolean;
+  href?: string,
+  frontmatter: CollectionEntry<"blog">["data"],
+  secHeading?: boolean,
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, modDatetime, description } = frontmatter;
+  const { title, published, modified, description } = frontmatter;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -26,7 +26,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           ? <h2 {...headerProps}>{title}</h2>
           : <h3 {...headerProps}>{title}</h3>
       }</a>
-      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime}/>
+      <Datetime published={published} modified={modified}/>
       <p>{description}</p>
     </li>
   );

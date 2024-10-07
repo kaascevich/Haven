@@ -3,9 +3,9 @@ import { slugifyStr } from "@utils/slugify";
 
 interface Frontmatter {
   frontmatter: {
-    title: string;
-    minutesRead: string;
-  };
+    title: string,
+    minutesRead: string,
+  },
 }
 
 export const getReadingTime = async () => {

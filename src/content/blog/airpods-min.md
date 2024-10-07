@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-09-30T09:06:46.000
+published: 2024-09-30T09:06:46.000
 title: AirPods Min
 tags:
   - airpods

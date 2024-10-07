@@ -3,8 +3,16 @@ import { SITE } from "@config";
 import Hr from "@components/Hr.astro";
 import LinkButton from "@components/LinkButton.astro";
 
+const mainNavItems = [
+  "posts",
+  "tags",
+  "songs",
+  "about",
+] as const;
+export type NavItem = typeof mainNavItems[number] | "search";
+
 export interface Props {
-  activeNav?: "posts" | "tags" | "songs" | "about" | "search";
+  activeNav?: NavItem,
 }
 
 const { activeNav } = Astro.props;
@@ -42,10 +50,9 @@ const { activeNav } = Astro.props;
           </svg>
         </button>
         <ul id="menu-items" class="display-none sm:flex">
-          <li><a href="/posts/" class={activeNav === "posts" ? "active" : ""}>posts</a></li>
-          <li><a href="/tags/"  class={activeNav === "tags"  ? "active" : ""}>tags </a></li>
-          <li><a href="/songs/" class={activeNav === "songs" ? "active" : ""}>songs</a></li>
-          <li><a href="/about/" class={activeNav === "about" ? "active" : ""}>about</a></li>
+          {mainNavItems.map(navItem =>
+            <li><a href={`/${navItem}/`} class={activeNav === navItem ? "active" : ""}>{navItem}</a></li>
+          )}
           <li>
             <LinkButton
               href="/search/"

@@ -1,6 +1,6 @@
 ---
-pubDatetime: 2024-09-27T20:29:24.000
-modDatetime: 2024-09-30T07:35:05.000
+published: 2024-09-27T20:29:24.000
+modified: 2024-09-30T07:35:05.000
 title: MacBookAir6,1 (part 2)
 tags:
   - linux

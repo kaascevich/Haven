@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2024-09-23T17:51:54.000
+published: 2024-09-23T17:51:54.000
 title: '"The iMac"'
 tags:
   - mac

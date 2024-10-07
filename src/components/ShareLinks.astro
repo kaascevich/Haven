@@ -38,7 +38,7 @@ const shareLinks = [
   <div class="text-center">
     {shareLinks.map(social =>
       <LinkButton
-        href={`${social.href + URL}`}
+        href={social.href + URL}
         className="link-button"
         title={social.linkTitle}
       >
