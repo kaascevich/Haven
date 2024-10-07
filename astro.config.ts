@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import opengraphImages from "astro-opengraph-images";
 import compress from "@playform/compress";
+import mdAstro from "@astropub/md";
 
 import remarkCollapse from "remark-collapse";
 import remarkReadingTime from "./src/utils/plugins/remarkReadingTime.mjs";
@@ -34,6 +35,7 @@ export default defineConfig({
       },
       render: renderOgImage,
     }),
+    mdAstro(),
     compress({
       HTML: {
         "html-minifier-terser": {
