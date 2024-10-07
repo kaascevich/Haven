@@ -24,21 +24,7 @@ const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostInde
       href={`/posts/${prevPost.slug}`}
       class="post-link"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M15 6l-6 6l6 6"/>
-      </svg>
+      &larr;
       <div>
         <span>previous post</span>
         <div class="post-title">{prevPost.title}</div>
@@ -54,21 +40,7 @@ const nextPost = currentPostIndex !== allPosts.length ? allPosts[currentPostInde
         <span>next post</span>
         <div class="post-title">{nextPost.title}</div>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none"
-      >
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M9 6l6 6l-6 6"/>
-      </svg>
+      &rarr;
     </a>
   }
 </div>
