@@ -5,7 +5,7 @@ export const SITE: Site = {
   website: "https://kaascevich.github.io/",
   author: "Kaleb A. Ascevich",
   profile: "https://kaascevich.github.io/about",
-  desc: "my tiny little haven on the internet",
+  description: "my tiny little haven on the internet",
   title: "kaascevich",
   postsPerIndex: 5,
   postsPerPage: 5,

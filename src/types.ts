@@ -4,7 +4,7 @@ export type Site = {
   website: string,
   author: string,
   profile: string,
-  desc: string,
+  description: string,
   title: string,
   postsPerIndex: number,
   postsPerPage: number,
