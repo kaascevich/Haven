@@ -18,7 +18,7 @@ export default function Datetime({
 }: Props) {
   return (
     <div className={
-      `flex items-center opacity-80 italic ${size === "sm" ? "text-sm" : "text-base"} ${className}`.trim()
+      `flex items-center opacity-80 ${size === "sm" ? "text-sm" : "text-base"} ${className}`.trim()
     }>
       <svg
         xmlns="http://www.w3.org/2000/svg"
