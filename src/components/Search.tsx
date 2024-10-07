@@ -31,7 +31,7 @@ export default function SearchBar({ searchList }: Props) {
     () => new Fuse(searchList, {
       keys: ["title", "description"],
       includeMatches: true,
-      minMatchCharLength: 2,
+      minMatchCharLength: 1,
       threshold: 0.5,
     }),
     [searchList]
@@ -53,9 +53,7 @@ export default function SearchBar({ searchList }: Props) {
   }, []);
 
   useEffect(() => {
-    // add search result only if input value is more
-    // than one character
-    const inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
+    const inputResult = inputVal.length > 0 ? fuse.search(inputVal) : [];
     setSearchResults(inputResult);
 
     // update search string in URL
@@ -68,6 +66,9 @@ export default function SearchBar({ searchList }: Props) {
       history.replaceState(history.state, "", location.pathname);
     }
   }, [inputVal]);
+
+  const resultsFound =
+    `found ${searchResults?.length} ${searchResults?.length === 1 ? "result" : "results"} for "${inputVal}"`;
 
   return <>
     <label className="relative block">
@@ -89,11 +90,7 @@ export default function SearchBar({ searchList }: Props) {
       />
     </label>
 
-    {inputVal.length > 1 &&
-      <div className="mt-8">
-        found {searchResults?.length} {searchResults?.length === 1 ? " result" : " results"} for &ldquo;{inputVal}&rdquo;
-      </div>
-    }
+    {inputVal.length > 0 && <div className="mt-8">{resultsFound}</div>}
 
     <ul>
       {searchResults?.map(({ item, refIndex }) =>
