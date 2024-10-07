@@ -80,7 +80,7 @@ And just like that, Wi-Fi is up and running!
 
 The only piece of hardware that doesn't work at all on Linux is the FaceTime camera, but since this is a laptop for the apocalypse, that's probably a good thing.
 
-In the next part, I'll work on actually turning this thing into an excellent offline library (to the furthest extent I can with only ~115GB to work with).
+In [the next part](/posts/the-apocalypse-laptop-part-2), I'll work on actually turning this thing into an excellent offline library (to the furthest extent I can with only ~115GB to work with).
 
 [live GNOME ISO]: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-12.7.0-amd64-gnome.iso
 
