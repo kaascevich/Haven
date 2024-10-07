@@ -26,7 +26,7 @@ export const SOCIALS: SocialObjects = [
   {
     name: "Mail",
     href: "mailto:cloths-fringe0s@icloud.com",
-    linkTitle: `Send an email to ${SITE.title}`,
+    linkTitle: `send an email to ${SITE.title}`,
   },
   {
     name: "Discord",
