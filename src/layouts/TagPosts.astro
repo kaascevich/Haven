@@ -19,7 +19,7 @@ const description = `${page.total} ${page.total === 1 ? "article" : "articles"} 
 ---
 
 <Layout title={`tag: ${tagName} | ${SITE.title}`} {description} activeNav="tags">
-  <Main title={[`tag:`, `${tagName}`]} titleTransition={tag} {description}>
+  <Main title={[`tag:`, tagName]} titleTransition={tag} {description}>
     <h1 slot="title" transition:name={tag}>{`tag:${tag}`}</h1>
     <ul>
       {page.data.map(({ data, slug }) =>
