@@ -79,7 +79,7 @@
     @apply prose-table:text-skin-base;
     @apply prose-th:border prose-th:border-skin-line;
     @apply prose-td:border prose-td:border-skin-line;
-    @apply prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line;
+    @apply prose-img:!my-2 prose-img:mx-auto prose-img:border-2 prose-img:border-skin-line prose-img:rounded-lg;
     @apply prose-hr:!border-skin-line;
   }
 
