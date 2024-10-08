@@ -9,6 +9,7 @@ import mdAstro from "@astropub/md";
 import remarkCollapse from "remark-collapse";
 import remarkReadingTime from "./src/utils/plugins/remarkReadingTime.mjs";
 import remarkToc from "remark-toc";
+import { remarkMark } from "remark-mark-highlight";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeFigure from "rehype-figure";
 
@@ -49,6 +50,7 @@ export default defineConfig({
       remarkToc,
       [remarkCollapse, { test: "Table of contents", }],
       remarkReadingTime,
+      remarkMark,
     ],
     rehypePlugins: [
       rehypeFigure,

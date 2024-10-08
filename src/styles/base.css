@@ -13,6 +13,7 @@
     --color-card: 172, 176, 190;
     --color-card-muted: 188, 192, 204;
     --color-border: 124, 127, 147;
+    --color-highlight: 223, 142, 29;
   }
 
   :root,
@@ -23,6 +24,7 @@
     --color-card: 91, 96, 120;
     --color-card-muted: 73, 77, 100;
     --color-border: 147, 154, 183;
+    --color-highlight: 238, 212, 159;
   }
 
   #sun-svg,
@@ -54,6 +56,13 @@
 
   svg.icon-tabler {
     @apply inline-block h-6 w-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110;
+  }
+
+  mark {
+    @apply rounded;
+    padding: 0.2rem;
+    background-color: rgb(var(--color-highlight));
+    color: rgb(var(--color-fill));
   }
 
   .prose {
