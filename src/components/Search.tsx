@@ -81,12 +81,11 @@ export default function SearchBar({ searchList }: Props) {
       <input
         className="block w-full rounded border border-skin-fill/40 bg-skin-fill py-3 pl-10 pr-3 placeholder:italic focus:border-skin-accent focus:outline-none"
         placeholder="type something here..."
-        type="text"
+        type="search"
         name="search"
         value={inputVal}
         onChange={handleChange}
         autoComplete="off"
-        enterKeyHint="search"
         ref={inputRef}
       />
     </search>
