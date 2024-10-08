@@ -36,13 +36,13 @@ const structuredData = {
   headline: title,
   image: ogImage,
   datePublished: published?.toISOString(),
-  ...(modified && { dateModified: modified.toISOString() }),
+  dateModified: modified?.toISOString(),
   author: [{
     "@type": "Person",
     name: SITE.author,
     url: SITE.profile,
   }],
-};
+} as const;
 ---
 
 <!doctype html>
