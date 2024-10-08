@@ -13,7 +13,7 @@
         const copyButton = document.createElement("button");
         copyButton.className =
           "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium hover:bg-skin-card-muted";
-        copyButton.innerHTML = copyButtonLabel;
+        copyButton.innerText = copyButtonLabel;
         codeBlock.setAttribute("tabindex", "0");
         codeBlock.appendChild(copyButton);
         
@@ -23,7 +23,7 @@
       const languageLabel = document.createElement("div");
       languageLabel.className =
         "absolute left-3 -top-3 px-1 py-1 text-xs leading-4 font-medium bg-skin-fill";
-      languageLabel.innerHTML = languageName;
+      languageLabel.innerText = languageName;
 
       // hide the language name in reader view
       languageLabel.hidden = true;
