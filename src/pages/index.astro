@@ -34,13 +34,15 @@ const nonFeaturedPosts = sortedPosts.filter(post => !post.data.featured);
         <span class="sr-only">RSS feed</span>
       </a>
 
-      <p>
-        I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online.
-        Take a gander at <a href="about">my about page</a> for more info.
-      </p>
-      <p>
-        If you want a look under the hood, you can find this site&rsquo;s source code <a href="https://github.com/kaascevich/kaascevich.github.io" target="_blank">here</a> &mdash; I based it off of <a href="https://astro-paper.pages.dev" target="_blank">AstroPaper</a>, and used <a href="https://catppuccin.com" target="_blank">Catppuccin</a> for the colors.
-      </p>
+      <div class="prose">
+        <p>
+          I&rsquo;m Kaleb, and I&rsquo;m quite content to float around aimlessly online.
+          Take a gander at <a href="about">my about page</a> for more info.
+        </p>
+        <p>
+          If you want a look under the hood, you can find this site&rsquo;s source code <a href="https://github.com/kaascevich/kaascevich.github.io" target="_blank">here</a> &mdash; I based it off of <a href="https://astro-paper.pages.dev" target="_blank">AstroPaper</a>, and used <a href="https://catppuccin.com" target="_blank">Catppuccin</a> for the colors.
+        </p>
+      </div>
       {SOCIALS.length > 0 &&
         <div class="social-wrapper">
           <div class="social-links">&ldquo;Social&rdquo; links:</div>
@@ -106,9 +108,6 @@ const nonFeaturedPosts = sortedPosts.filter(post => !post.data.featured);
   }
   #hero p {
     @apply my-2;
-  }
-  #hero p a {
-    @apply underline decoration-wavy underline-offset-4 hover:text-skin-accent;
   }
   .social-wrapper {
     @apply mt-4 flex flex-col sm:flex-row sm:items-center;
