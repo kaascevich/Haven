@@ -23,7 +23,7 @@ const description = `${page.total} ${page.total === 1 ? "article" : "articles"} 
     <h1 slot="title" transition:name={tag}>{`tag:${tag}`}</h1>
     <ul>
       {page.data.map(({ data, slug }) =>
-        <Card href={`/posts/${slug}/`} {data}/>
+        <Card href={`/posts/${slug}/`} frontmatter={data}/>
       )}
     </ul>
   </Main>

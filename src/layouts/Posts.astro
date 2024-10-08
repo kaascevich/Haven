@@ -20,7 +20,7 @@ const description = "all the blog posts I've let loose on the world";
   <Main title="posts" {description}>
     <ul>
       {page.data.map(({ data, slug }) =>
-        <Card href={`/posts/${slug}/`} {data}/>
+        <Card href={`/posts/${slug}/`} frontmatter={data}/>
       )}
     </ul>
   </Main>

@@ -96,7 +96,7 @@ export default function SearchBar({ searchList }: Props) {
       {searchResults?.map(({ item, refIndex }) =>
         <Card
           href={`/posts/${item.slug}/`}
-          data={item.data}
+          frontmatter={item.data}
           key={`${refIndex}-${item.slug}`}
         />
       )}

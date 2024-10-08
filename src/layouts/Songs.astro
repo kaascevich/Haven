@@ -22,14 +22,14 @@ const description = "all the songs I've created or remixed";
     <section id="originals">
       <h2>originals</h2>
       <ul class="song-list">
-        {originals.map(song => <SongCard data={song.data}/>)}
+        {originals.map(song => <SongCard frontmatter={song.data}/>)}
       </ul>
     </section>
 
     <section id="remixes">
       <h2>remixes</h2>
       <ul class="song-list">
-        {remixes.map(song => <SongCard data={song.data}/>)}
+        {remixes.map(song => <SongCard frontmatter={song.data}/>)}
       </ul>
     </section>
   </Main>
