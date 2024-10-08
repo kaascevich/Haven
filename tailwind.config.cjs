@@ -4,7 +4,7 @@ function withOpacity(variableName) {
     : `rgb(var(${variableName}))`;
 }
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   darkMode: ["selector", "[data-theme='dark']"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -74,8 +74,8 @@ module.exports = {
             code: {
               color: false,
             },
-            'blockquote p:first-of-type::before': { content: 'none' },
-            'blockquote p:first-of-type::after': { content: 'none' },
+            "blockquote p:first-of-type::before": { content: "none" },
+            "blockquote p:first-of-type::after": { content: "none" },
           },
         },
       },

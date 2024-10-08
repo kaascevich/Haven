@@ -1,9 +1,9 @@
 ---
-// Remove current url path and remove trailing slash if exists
+// remove current url path and remove trailing slash if it exists
 const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
 
-// Get url array from path
-// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
+// get url array from path
+// eg: /tags/tailwindcss => ["tags", "tailwindcss"]
 const breadcrumbList = currentUrlPath.split("/").slice(1);
 
 // if breadcrumb is home > posts > 1 <etc>
