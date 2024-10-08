@@ -42,23 +42,23 @@ export default function Datetime({
 }
 
 const FormattedDatetime = ({ published, modified }: DatetimesProps) => {
-  const myDatetime = new Date(
+  const actualDate = new Date(
     modified && modified > published ? modified : published
   );
 
-  const date = myDatetime.toLocaleDateString(["en-US"], {
+  const date = actualDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-  const time = myDatetime.toLocaleTimeString(["en-US"], {
+  const time = actualDate.toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
   });
 
   return <>
-    <time dateTime={myDatetime.toISOString()}>{date}</time>
+    <time dateTime={actualDate.toISOString()}>{date}</time>
     <span aria-hidden="true"> | </span>
     <span className="sr-only">&nbsp;at&nbsp;</span>
     <span className="text-nowrap">{time}</span>
