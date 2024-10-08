@@ -55,13 +55,8 @@ const layoutProps = {
 
   <main>
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <Timestamp
-      {published}
-      {modified}
-      size="lg"
-      className="mt-2 mb-1"
-    />
-    <span class="flex items-center opacity-80">{readingTime}</span>
+    <Timestamp {published} {modified} size="lg" className="mt-2 mb-1"/>
+    <span class="opacity-80">{readingTime}</span>
     
     <article class="prose mx-auto mt-8 max-w-3xl">
       <Content/>
