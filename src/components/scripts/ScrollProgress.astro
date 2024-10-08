@@ -2,7 +2,7 @@
   function createProgressBar() {
     // create the main container div
     const progressContainer = document.createElement("div");
-    progressContainer.className = "fixed top-0 z-10 h-1 w-full bg-skin-fill";
+    progressContainer.className = "fixed bottom-0 z-10 h-1 w-full bg-skin-fill";
 
     // create the progress bar div
     const progressBar = document.createElement("div");
@@ -16,11 +16,9 @@
 
   function updateScrollProgress() {
     document.addEventListener("scroll", () => {
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
+      const rootNode = document.documentElement;
+      const winScroll = rootNode.scrollTop;
+      const height = rootNode.scrollHeight - rootNode.clientHeight;
       const scrolled = (winScroll / height) * 100;
 
       const progressBar = document?.getElementById("progress-bar");

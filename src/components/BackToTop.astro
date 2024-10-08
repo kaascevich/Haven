@@ -6,8 +6,7 @@
 </button>
 
 <script is:inline data-astro-rerun>
-  document.querySelector("#back-to-top")?.addEventListener("click", () => {
-    document.body.scrollTop = 0; // for Safari
-    document.documentElement.scrollTop = 0; // for Chrome, Firefox, and Opera
-  });
+  document.querySelector("#back-to-top")?.addEventListener(
+    "click", () => document.documentElement.scrollTop = 0
+  );
 </script>
