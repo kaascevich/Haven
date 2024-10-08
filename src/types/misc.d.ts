@@ -1,2 +1,2 @@
-declare module 'remark-collapse';
+declare module "remark-collapse";
 declare module "rehype-figure";
