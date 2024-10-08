@@ -13,12 +13,11 @@ export default function Comments({
 }: CommentsProps) {
   const [theme, setTheme] = useState(() => {
     const currentTheme = localStorage.getItem("theme");
-    const browserTheme = matchMedia("(prefers-color-scheme: dark)")
-      .matches
+    const browserTheme = matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
 
-    return currentTheme || browserTheme;
+    return currentTheme ?? browserTheme;
   });
 
   useEffect(() => {

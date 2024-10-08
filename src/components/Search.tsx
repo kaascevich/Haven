@@ -46,7 +46,7 @@ export default function SearchBar({ searchList }: Props) {
 
     // put focus cursor at the end of the string
     setTimeout(() => {
-      const searchStrLength = searchStr?.length || 0;
+      const searchStrLength = searchStr?.length ?? 0;
       inputRef.current!.selectionStart = searchStrLength;
       inputRef.current!.selectionEnd = searchStrLength;
     }, 50);

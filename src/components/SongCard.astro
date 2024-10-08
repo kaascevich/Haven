@@ -16,7 +16,7 @@ const { frontmatter } = Astro.props;
       <h2 class="text-lg font-medium">{frontmatter.title}</h2>
     </div>
 
-    <p class="opacity-75">{frontmatter.composer || SITE.author}</p>
+    <p class="opacity-75">{frontmatter.composer ?? SITE.author}</p>
 
     <audio
       class="pt-1"
