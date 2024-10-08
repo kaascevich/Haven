@@ -1,5 +1,3 @@
-import { LOCALE } from "@config";
-
 interface DatetimesProps {
   published: Date,
   modified?: Date,
@@ -48,13 +46,13 @@ const FormattedDatetime = ({ published, modified }: DatetimesProps) => {
     modified && modified > published ? modified : published
   );
 
-  const date = myDatetime.toLocaleDateString(LOCALE.langTag, {
+  const date = myDatetime.toLocaleDateString(["en-US"], {
     year: "numeric",
     month: "long",
     day: "numeric",
   });
 
-  const time = myDatetime.toLocaleTimeString(LOCALE.langTag, {
+  const time = myDatetime.toLocaleTimeString(["en-US"], {
     hour: "numeric",
     minute: "2-digit",
   });

@@ -12,11 +12,6 @@ export const SITE: Site = {
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
 };
 
-export const LOCALE = {
-  lang: "en",
-  langTag: ["en-US"],
-};
-
 export const SOCIALS: SocialObjects = [
   {
     name: "GitHub",
