@@ -7,20 +7,19 @@ import ScrollProgress from "@components/scripts/ScrollProgress.astro";
 import CodeBlockExtras from "@components/scripts/CodeBlockExtras.astro";
 
 export interface Props {
-  frontmatter: {
+  data: {
     title: string,
-    description?: string,
   },
 }
 
-const { frontmatter } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<Layout title={`${frontmatter.title} | ${SITE.title}`} activeNav="about">
+<Layout title={`${data.title} | ${SITE.title}`} activeNav="about">
   <Breadcrumbs/>
   <main>
     <section class="prose mb-28 max-w-3xl prose-img:border-0">
-      <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+      <h1 class="text-2xl tracking-wider sm:text-3xl">{data.title}</h1>
       <slot/>
     </section>
   </main>
