@@ -1,11 +1,20 @@
 ---
 published: 2024-09-25T11:19:13-05:00
+modified: 2024-10-08T11:29:32-05:00
 title: AXVisualSupportAgent woes
 tags:
   - macos
   - bug
 description: Stop. Using. My. Mic.
 ---
+
+> **UPDATE:** I've found a (temporary) solution to the problem described in this article:
+> 1. Open Activity Monitor and choose View &rarr; All Processes.
+> 2. Search for `coreaudiod`, and click the Stop icon in the toolbar.
+> 3. An alert will appear asking if you really want to kill `coreaudiod`. Choose Quit, and authenticate if asked. `coreaudiod` will immediately restart after you kill it; this is expected.
+> 4. AXVisualSupportAgent should immediately stop using the microphone, and won't use it again until your Mac restarts.
+>
+> You will need to perform these steps again every time you restart your Mac until Apple provides an official fix.
 
 For several months now, "Accessibility Services" has been using my microphone for _something_ non-stop:
 
