@@ -35,7 +35,7 @@ if (breadcrumbList[0] === "tags" && !isNaN(Number(breadcrumbList[2]))) {
       breadcrumbList.map((breadcrumb, index) =>
         index + 1 === breadcrumbList.length ? (
           <li>
-            <span class="lowercase" aria-current="page">
+            <span aria-current="page">
               {decodeURIComponent(breadcrumb)}
             </span>
           </li>
