@@ -1,14 +1,14 @@
-interface DateTimeProps {
+interface TimestampProps {
   published: Date,
   modified?: Date,
 }
 
-interface Props extends DateTimeProps {
+interface Props extends TimestampProps {
   size?: "sm" | "lg",
   className?: string,
 }
 
-export default function DateTime({
+export default function Timestamp({
   published,
   modified,
   size = "sm",
@@ -31,7 +31,7 @@ export default function DateTime({
       {modified && modified > published
         ? <span className="mr-1">Updated:</span>
         : <span className="sr-only">Published:</span>}
-      <FormattedDateTime
+      <FormattedTimestamp
         published={published}
         modified={modified}
       />
@@ -39,7 +39,7 @@ export default function DateTime({
   );
 }
 
-const FormattedDateTime = ({ published, modified }: DateTimeProps) => {
+const FormattedTimestamp = ({ published, modified }: TimestampProps) => {
   const actualDate = new Date(
     modified && modified > published ? modified : published
   );

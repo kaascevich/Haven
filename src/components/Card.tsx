@@ -1,5 +1,5 @@
 import { slugifyStr } from "@utils/slugify";
-import DateTime from "@components/DateTime";
+import Timestamp from "@components/Timestamp";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -26,7 +26,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           ? <h2 {...headerProps}>{title}</h2>
           : <h3 {...headerProps}>{title}</h3>
       }</a>
-      <DateTime published={published} modified={modified}/>
+      <Timestamp published={published} modified={modified}/>
       <p>{description}</p>
     </li>
   );

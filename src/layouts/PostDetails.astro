@@ -2,7 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Tag from "@components/Tag.astro";
 import Comments from "@components/Comments";
-import DateTime from "@components/DateTime";
+import Timestamp from "@components/Timestamp";
 import PostLinks from "@components/PostLinks.astro";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
@@ -55,7 +55,7 @@ const layoutProps = {
 
   <main>
     <h1 transition:name={slugifyStr(title)} class="post-title">{title}</h1>
-    <DateTime
+    <Timestamp
       {published}
       {modified}
       size="lg"
