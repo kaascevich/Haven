@@ -31,12 +31,10 @@ export default function Datetime({
       {modified && modified > published
         ? <span className="mr-1">Updated:</span>
         : <span className="sr-only">Published:</span>}
-      <span>
-        <FormattedDatetime
-          published={published}
-          modified={modified}
-        />
-      </span>
+      <FormattedDatetime
+        published={published}
+        modified={modified}
+      />
     </div>
   );
 }
@@ -57,10 +55,10 @@ const FormattedDatetime = ({ published, modified }: DatetimesProps) => {
     minute: "2-digit",
   });
 
-  return <>
+  return <span>
     <time dateTime={actualDate.toISOString()}>{date}</time>
     <span aria-hidden="true"> | </span>
     <span className="sr-only">&nbsp;at&nbsp;</span>
     <span className="text-nowrap">{time}</span>
-  </>;
+  </span>;
 };
