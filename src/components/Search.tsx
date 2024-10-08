@@ -86,6 +86,7 @@ export default function SearchBar({ searchList }: Props) {
         value={inputVal}
         onChange={handleChange}
         autoComplete="off"
+        enterKeyHint="search"
         ref={inputRef}
       />
     </search>
